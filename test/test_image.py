@@ -18,8 +18,12 @@ class TestImage(BaseTest):
     def test_images_get(self):
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
         presentation_result = BaseTest.slides_api.get_presentation_images(self.file_name, self.password, self.folder_name)
-        slide_result = BaseTest.slides_api.get_slide_images(self.file_name, self.slide_index, self.password, self.folder_name)
+        slide_result = BaseTest.slides_api.get_slide_images(self.file_name, self.slide_index, None, None, self.password, self.folder_name)
         self.assertLess(len(slide_result.list), len(presentation_result.list))
+        shape_result = BaseTest.slides_api.get_shape_images(self.file_name, 2, 2, None, self.password, self.folder_name)
+        self.assertEqual(1, len(shape_result.list))
+        alt_result = BaseTest.slides_api.get_shape_images(self.file_name, 2, None, "title", self.password, self.folder_name)
+        self.assertEqual(0, len(alt_result.list))
 
     def test_images_download_storage(self):
         BaseTest.slides_api.copy_file(self.temp_path, self.path)

@@ -1850,6 +1850,133 @@ class SlidesApi(ApiBase):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def create_caption_track(self, name, slide_index, shape_index, label, data = None, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
+        """Create video/audio captions track.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.(name, slide_index, shape_index, label, data, password, folder, storage, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Document name.
+        :param slide_index Slide index.
+        :param shape_index Shape index (must refer to a video or audio frame).
+        :param label Caption track label.
+        :param data Caption track data.
+        :param password Document password.
+        :param folder Document folder.
+        :param storage Presentation storage.
+        :return: CaptionTrack
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.create_caption_track_with_http_info(name, slide_index, shape_index, label, data, password, folder, storage, **kwargs)  # noqa: E501
+        else:
+            (data) = self.create_caption_track_with_http_info(name, slide_index, shape_index, label, data, password, folder, storage, **kwargs)  # noqa: E501
+            return data
+
+    def create_caption_track_with_http_info(self, name, slide_index, shape_index, label, data = None, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
+        """Create video/audio captions track.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.create_caption_track_with_http_info(name, slide_index, shape_index, label, data, password, folder, storage, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Document name.
+        :param slide_index Slide index.
+        :param shape_index Shape index (must refer to a video or audio frame).
+        :param label Caption track label.
+        :param data Caption track data.
+        :param password Document password.
+        :param folder Document folder.
+        :param storage Presentation storage.
+        :return: CaptionTrack
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_caption_track" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not name:
+            raise ValueError("Missing the required parameter `name` when calling `create_caption_track`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not slide_index:
+            raise ValueError("Missing the required parameter `slide_index` when calling `create_caption_track`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not shape_index:
+            raise ValueError("Missing the required parameter `shape_index` when calling `create_caption_track`")  # noqa: E501
+        # verify the required parameter 'label' is set
+        if not label:
+            raise ValueError("Missing the required parameter `label` when calling `create_caption_track`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = name  # noqa: E501
+        path_params['slideIndex'] = slide_index  # noqa: E501
+        path_params['shapeIndex'] = shape_index  # noqa: E501
+
+        query_params = []
+        if label:
+            query_params.append(('label', label))  # noqa: E501
+        if folder:
+            query_params.append(('folder', folder))  # noqa: E501
+        if storage:
+            query_params.append(('storage', storage))  # noqa: E501
+
+        header_params = {}
+        if password:
+            header_params['password'] = password  # noqa: E501
+
+        form_params = []
+        param_files = {}
+
+        body_params = None
+        if data:
+            body_params = data
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/captionTracks', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=param_files,
+            response_type='CaptionTrack',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', False),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def create_chart_category(self, name, slide_index, shape_index, category, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
         """Add a new category to a chart.  # noqa: E501
 
@@ -5319,133 +5446,6 @@ class SlidesApi(ApiBase):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_video_caption_track(self, name, slide_index, shape_index, label, data = None, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
-        """Create video captions track.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass is_async=True
-        >>> thread = api.(name, slide_index, shape_index, label, data, password, folder, storage, is_async=True)
-        >>> result = thread.get()
-
-        :param is_async bool
-        :param name Document name.
-        :param slide_index Slide index.
-        :param shape_index Shape index (must refer to a picture frame).
-        :param label Caption track label.
-        :param data Caption track data.
-        :param password Document password.
-        :param folder Document folder.
-        :param storage Presentation storage.
-        :return: CaptionTrack
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('is_async'):
-            return self.create_video_caption_track_with_http_info(name, slide_index, shape_index, label, data, password, folder, storage, **kwargs)  # noqa: E501
-        else:
-            (data) = self.create_video_caption_track_with_http_info(name, slide_index, shape_index, label, data, password, folder, storage, **kwargs)  # noqa: E501
-            return data
-
-    def create_video_caption_track_with_http_info(self, name, slide_index, shape_index, label, data = None, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
-        """Create video captions track.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass is_async=True
-        >>> thread = api.create_video_caption_track_with_http_info(name, slide_index, shape_index, label, data, password, folder, storage, is_async=True)
-        >>> result = thread.get()
-
-        :param is_async bool
-        :param name Document name.
-        :param slide_index Slide index.
-        :param shape_index Shape index (must refer to a picture frame).
-        :param label Caption track label.
-        :param data Caption track data.
-        :param password Document password.
-        :param folder Document folder.
-        :param storage Presentation storage.
-        :return: CaptionTrack
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = []  # noqa: E501
-        all_params.append('is_async')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_video_caption_track" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if not name:
-            raise ValueError("Missing the required parameter `name` when calling `create_video_caption_track`")  # noqa: E501
-        # verify the required parameter 'slide_index' is set
-        if not slide_index:
-            raise ValueError("Missing the required parameter `slide_index` when calling `create_video_caption_track`")  # noqa: E501
-        # verify the required parameter 'shape_index' is set
-        if not shape_index:
-            raise ValueError("Missing the required parameter `shape_index` when calling `create_video_caption_track`")  # noqa: E501
-        # verify the required parameter 'label' is set
-        if not label:
-            raise ValueError("Missing the required parameter `label` when calling `create_video_caption_track`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        path_params['name'] = name  # noqa: E501
-        path_params['slideIndex'] = slide_index  # noqa: E501
-        path_params['shapeIndex'] = shape_index  # noqa: E501
-
-        query_params = []
-        if label:
-            query_params.append(('label', label))  # noqa: E501
-        if folder:
-            query_params.append(('folder', folder))  # noqa: E501
-        if storage:
-            query_params.append(('storage', storage))  # noqa: E501
-
-        header_params = {}
-        if password:
-            header_params['password'] = password  # noqa: E501
-
-        form_params = []
-        param_files = {}
-
-        body_params = None
-        if data:
-            body_params = data
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['JWT']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/captionTracks', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=param_files,
-            response_type='CaptionTrack',  # noqa: E501
-            auth_settings=auth_settings,
-            is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', False),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
     def create_watermark(self, name, shape = None, font_height = None, text = None, font_name = None, font_color = None, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
         """Adds a text watermark to each slide of the presentation. Text watermark can be setup via method arguments or withing Shape DTO for detailed customization. Both options are applicable simultaneously.   # noqa: E501
 
@@ -6474,6 +6474,244 @@ class SlidesApi(ApiBase):
             post_params=form_params,
             files=param_files,
             response_type='SlideBackground',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', False),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_caption_track(self, name, slide_index, shape_index, captions_index, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
+        """Delete video/audio captions track.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.(name, slide_index, shape_index, captions_index, password, folder, storage, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Document name.
+        :param slide_index Slide index.
+        :param shape_index Shape index (must refer to a video or audio frame).
+        :param captions_index Captions track index.
+        :param password Document password.
+        :param folder Document folder.
+        :param storage Presentation storage.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.delete_caption_track_with_http_info(name, slide_index, shape_index, captions_index, password, folder, storage, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_caption_track_with_http_info(name, slide_index, shape_index, captions_index, password, folder, storage, **kwargs)  # noqa: E501
+            return data
+
+    def delete_caption_track_with_http_info(self, name, slide_index, shape_index, captions_index, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
+        """Delete video/audio captions track.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.delete_caption_track_with_http_info(name, slide_index, shape_index, captions_index, password, folder, storage, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Document name.
+        :param slide_index Slide index.
+        :param shape_index Shape index (must refer to a video or audio frame).
+        :param captions_index Captions track index.
+        :param password Document password.
+        :param folder Document folder.
+        :param storage Presentation storage.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_caption_track" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not name:
+            raise ValueError("Missing the required parameter `name` when calling `delete_caption_track`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not slide_index:
+            raise ValueError("Missing the required parameter `slide_index` when calling `delete_caption_track`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not shape_index:
+            raise ValueError("Missing the required parameter `shape_index` when calling `delete_caption_track`")  # noqa: E501
+        # verify the required parameter 'captions_index' is set
+        if not captions_index:
+            raise ValueError("Missing the required parameter `captions_index` when calling `delete_caption_track`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = name  # noqa: E501
+        path_params['slideIndex'] = slide_index  # noqa: E501
+        path_params['shapeIndex'] = shape_index  # noqa: E501
+        path_params['captionsIndex'] = captions_index  # noqa: E501
+
+        query_params = []
+        if folder:
+            query_params.append(('folder', folder))  # noqa: E501
+        if storage:
+            query_params.append(('storage', storage))  # noqa: E501
+
+        header_params = {}
+        if password:
+            header_params['password'] = password  # noqa: E501
+
+        form_params = []
+        param_files = {}
+
+        body_params = None
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/captionTracks/{captionsIndex}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=param_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', False),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_caption_tracks(self, name, slide_index, shape_index, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
+        """Delete all video/audio captions tracks.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.(name, slide_index, shape_index, password, folder, storage, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Document name.
+        :param slide_index Slide index.
+        :param shape_index Shape index (must refer to a video frame).
+        :param password Document password.
+        :param folder Document folder.
+        :param storage Presentation storage.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.delete_caption_tracks_with_http_info(name, slide_index, shape_index, password, folder, storage, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_caption_tracks_with_http_info(name, slide_index, shape_index, password, folder, storage, **kwargs)  # noqa: E501
+            return data
+
+    def delete_caption_tracks_with_http_info(self, name, slide_index, shape_index, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
+        """Delete all video/audio captions tracks.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.delete_caption_tracks_with_http_info(name, slide_index, shape_index, password, folder, storage, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Document name.
+        :param slide_index Slide index.
+        :param shape_index Shape index (must refer to a video frame).
+        :param password Document password.
+        :param folder Document folder.
+        :param storage Presentation storage.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_caption_tracks" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not name:
+            raise ValueError("Missing the required parameter `name` when calling `delete_caption_tracks`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not slide_index:
+            raise ValueError("Missing the required parameter `slide_index` when calling `delete_caption_tracks`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not shape_index:
+            raise ValueError("Missing the required parameter `shape_index` when calling `delete_caption_tracks`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = name  # noqa: E501
+        path_params['slideIndex'] = slide_index  # noqa: E501
+        path_params['shapeIndex'] = shape_index  # noqa: E501
+
+        query_params = []
+        if folder:
+            query_params.append(('folder', folder))  # noqa: E501
+        if storage:
+            query_params.append(('storage', storage))  # noqa: E501
+
+        header_params = {}
+        if password:
+            header_params['password'] = password  # noqa: E501
+
+        form_params = []
+        param_files = {}
+
+        body_params = None
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/captionTracks', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=param_files,
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -12011,244 +12249,6 @@ class SlidesApi(ApiBase):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_video_caption_track(self, name, slide_index, shape_index, captions_index, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
-        """Delete video captions track.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass is_async=True
-        >>> thread = api.(name, slide_index, shape_index, captions_index, password, folder, storage, is_async=True)
-        >>> result = thread.get()
-
-        :param is_async bool
-        :param name Document name.
-        :param slide_index Slide index.
-        :param shape_index Shape index (must refer to a video frame).
-        :param captions_index Captions track index.
-        :param password Document password.
-        :param folder Document folder.
-        :param storage Presentation storage.
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('is_async'):
-            return self.delete_video_caption_track_with_http_info(name, slide_index, shape_index, captions_index, password, folder, storage, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_video_caption_track_with_http_info(name, slide_index, shape_index, captions_index, password, folder, storage, **kwargs)  # noqa: E501
-            return data
-
-    def delete_video_caption_track_with_http_info(self, name, slide_index, shape_index, captions_index, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
-        """Delete video captions track.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass is_async=True
-        >>> thread = api.delete_video_caption_track_with_http_info(name, slide_index, shape_index, captions_index, password, folder, storage, is_async=True)
-        >>> result = thread.get()
-
-        :param is_async bool
-        :param name Document name.
-        :param slide_index Slide index.
-        :param shape_index Shape index (must refer to a video frame).
-        :param captions_index Captions track index.
-        :param password Document password.
-        :param folder Document folder.
-        :param storage Presentation storage.
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = []  # noqa: E501
-        all_params.append('is_async')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_video_caption_track" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if not name:
-            raise ValueError("Missing the required parameter `name` when calling `delete_video_caption_track`")  # noqa: E501
-        # verify the required parameter 'slide_index' is set
-        if not slide_index:
-            raise ValueError("Missing the required parameter `slide_index` when calling `delete_video_caption_track`")  # noqa: E501
-        # verify the required parameter 'shape_index' is set
-        if not shape_index:
-            raise ValueError("Missing the required parameter `shape_index` when calling `delete_video_caption_track`")  # noqa: E501
-        # verify the required parameter 'captions_index' is set
-        if not captions_index:
-            raise ValueError("Missing the required parameter `captions_index` when calling `delete_video_caption_track`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        path_params['name'] = name  # noqa: E501
-        path_params['slideIndex'] = slide_index  # noqa: E501
-        path_params['shapeIndex'] = shape_index  # noqa: E501
-        path_params['captionsIndex'] = captions_index  # noqa: E501
-
-        query_params = []
-        if folder:
-            query_params.append(('folder', folder))  # noqa: E501
-        if storage:
-            query_params.append(('storage', storage))  # noqa: E501
-
-        header_params = {}
-        if password:
-            header_params['password'] = password  # noqa: E501
-
-        form_params = []
-        param_files = {}
-
-        body_params = None
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['JWT']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/captionTracks/{captionsIndex}', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=param_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', False),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def delete_video_caption_tracks(self, name, slide_index, shape_index, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
-        """Delete all video captions tracks.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass is_async=True
-        >>> thread = api.(name, slide_index, shape_index, password, folder, storage, is_async=True)
-        >>> result = thread.get()
-
-        :param is_async bool
-        :param name Document name.
-        :param slide_index Slide index.
-        :param shape_index Shape index (must refer to a video frame).
-        :param password Document password.
-        :param folder Document folder.
-        :param storage Presentation storage.
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('is_async'):
-            return self.delete_video_caption_tracks_with_http_info(name, slide_index, shape_index, password, folder, storage, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_video_caption_tracks_with_http_info(name, slide_index, shape_index, password, folder, storage, **kwargs)  # noqa: E501
-            return data
-
-    def delete_video_caption_tracks_with_http_info(self, name, slide_index, shape_index, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
-        """Delete all video captions tracks.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass is_async=True
-        >>> thread = api.delete_video_caption_tracks_with_http_info(name, slide_index, shape_index, password, folder, storage, is_async=True)
-        >>> result = thread.get()
-
-        :param is_async bool
-        :param name Document name.
-        :param slide_index Slide index.
-        :param shape_index Shape index (must refer to a video frame).
-        :param password Document password.
-        :param folder Document folder.
-        :param storage Presentation storage.
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = []  # noqa: E501
-        all_params.append('is_async')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_video_caption_tracks" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if not name:
-            raise ValueError("Missing the required parameter `name` when calling `delete_video_caption_tracks`")  # noqa: E501
-        # verify the required parameter 'slide_index' is set
-        if not slide_index:
-            raise ValueError("Missing the required parameter `slide_index` when calling `delete_video_caption_tracks`")  # noqa: E501
-        # verify the required parameter 'shape_index' is set
-        if not shape_index:
-            raise ValueError("Missing the required parameter `shape_index` when calling `delete_video_caption_tracks`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        path_params['name'] = name  # noqa: E501
-        path_params['slideIndex'] = slide_index  # noqa: E501
-        path_params['shapeIndex'] = shape_index  # noqa: E501
-
-        query_params = []
-        if folder:
-            query_params.append(('folder', folder))  # noqa: E501
-        if storage:
-            query_params.append(('storage', storage))  # noqa: E501
-
-        header_params = {}
-        if password:
-            header_params['password'] = password  # noqa: E501
-
-        form_params = []
-        param_files = {}
-
-        body_params = None
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['JWT']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/captionTracks', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=param_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', False),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
     def delete_watermark(self, name, shape_name = None, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
         """Removes shapes with name \&quot;watermark\&quot; from the presentation.  # noqa: E501
 
@@ -15184,6 +15184,126 @@ class SlidesApi(ApiBase):
             post_params=form_params,
             files=param_files,
             response_type='SlideBackground',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', False),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_caption_tracks(self, name, slide_index, shape_index, include_data = None, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
+        """Gets video/audio captions tracks.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.(name, slide_index, shape_index, include_data, password, folder, storage, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Document name.
+        :param slide_index Slide index.
+        :param shape_index Shape index (must refer to a video or audio frame).
+        :param include_data true to include caption data string values in the response.
+        :param password Document password.
+        :param folder Document folder.
+        :param storage Presentation storage.
+        :return: CaptionTracks
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.get_caption_tracks_with_http_info(name, slide_index, shape_index, include_data, password, folder, storage, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_caption_tracks_with_http_info(name, slide_index, shape_index, include_data, password, folder, storage, **kwargs)  # noqa: E501
+            return data
+
+    def get_caption_tracks_with_http_info(self, name, slide_index, shape_index, include_data = None, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
+        """Gets video/audio captions tracks.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.get_caption_tracks_with_http_info(name, slide_index, shape_index, include_data, password, folder, storage, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Document name.
+        :param slide_index Slide index.
+        :param shape_index Shape index (must refer to a video or audio frame).
+        :param include_data true to include caption data string values in the response.
+        :param password Document password.
+        :param folder Document folder.
+        :param storage Presentation storage.
+        :return: CaptionTracks
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_caption_tracks" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not name:
+            raise ValueError("Missing the required parameter `name` when calling `get_caption_tracks`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not slide_index:
+            raise ValueError("Missing the required parameter `slide_index` when calling `get_caption_tracks`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not shape_index:
+            raise ValueError("Missing the required parameter `shape_index` when calling `get_caption_tracks`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = name  # noqa: E501
+        path_params['slideIndex'] = slide_index  # noqa: E501
+        path_params['shapeIndex'] = shape_index  # noqa: E501
+
+        query_params = []
+        if include_data:
+            query_params.append(('includeData', include_data))  # noqa: E501
+        if folder:
+            query_params.append(('folder', folder))  # noqa: E501
+        if storage:
+            query_params.append(('storage', storage))  # noqa: E501
+
+        header_params = {}
+        if password:
+            header_params['password'] = password  # noqa: E501
+
+        form_params = []
+        param_files = {}
+
+        body_params = None
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/captionTracks', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=param_files,
+            response_type='CaptionTracks',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -19608,17 +19728,19 @@ class SlidesApi(ApiBase):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_slide_images(self, name, slide_index, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
+    def get_slide_images(self, name, slide_index, shape_index = None, shape_alt_text = None, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
         """Read slide images info.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
-        >>> thread = api.(name, slide_index, password, folder, storage, is_async=True)
+        >>> thread = api.(name, slide_index, shape_index, shape_alt_text, password, folder, storage, is_async=True)
         >>> result = thread.get()
 
         :param is_async bool
         :param name Document name.
         :param slide_index Slide index.
+        :param shape_index Shape index (null to search all shapes).
+        :param shape_alt_text Shape alt name (null to search all shapes).
         :param password Document password.
         :param folder Document folder.
         :param storage Document storage.
@@ -19628,22 +19750,24 @@ class SlidesApi(ApiBase):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('is_async'):
-            return self.get_slide_images_with_http_info(name, slide_index, password, folder, storage, **kwargs)  # noqa: E501
+            return self.get_slide_images_with_http_info(name, slide_index, shape_index, shape_alt_text, password, folder, storage, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_slide_images_with_http_info(name, slide_index, password, folder, storage, **kwargs)  # noqa: E501
+            (data) = self.get_slide_images_with_http_info(name, slide_index, shape_index, shape_alt_text, password, folder, storage, **kwargs)  # noqa: E501
             return data
 
-    def get_slide_images_with_http_info(self, name, slide_index, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
+    def get_slide_images_with_http_info(self, name, slide_index, shape_index = None, shape_alt_text = None, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
         """Read slide images info.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
-        >>> thread = api.get_slide_images_with_http_info(name, slide_index, password, folder, storage, is_async=True)
+        >>> thread = api.get_slide_images_with_http_info(name, slide_index, shape_index, shape_alt_text, password, folder, storage, is_async=True)
         >>> result = thread.get()
 
         :param is_async bool
         :param name Document name.
         :param slide_index Slide index.
+        :param shape_index Shape index (null to search all shapes).
+        :param shape_alt_text Shape alt name (null to search all shapes).
         :param password Document password.
         :param folder Document folder.
         :param storage Document storage.
@@ -19681,6 +19805,10 @@ class SlidesApi(ApiBase):
         path_params['slideIndex'] = slide_index  # noqa: E501
 
         query_params = []
+        if shape_index:
+            query_params.append(('shapeIndex', shape_index))  # noqa: E501
+        if shape_alt_text:
+            query_params.append(('shapeAltText', shape_alt_text))  # noqa: E501
         if folder:
             query_params.append(('folder', folder))  # noqa: E501
         if storage:
@@ -21916,126 +22044,6 @@ class SlidesApi(ApiBase):
             post_params=form_params,
             files=param_files,
             response_type='VbaProject',  # noqa: E501
-            auth_settings=auth_settings,
-            is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', False),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_video_caption_tracks(self, name, slide_index, shape_index, include_data = None, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
-        """Gets video captions tracks.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass is_async=True
-        >>> thread = api.(name, slide_index, shape_index, include_data, password, folder, storage, is_async=True)
-        >>> result = thread.get()
-
-        :param is_async bool
-        :param name Document name.
-        :param slide_index Slide index.
-        :param shape_index Shape index (must refer to a picture frame).
-        :param include_data true to include caption data string values in the response.
-        :param password Document password.
-        :param folder Document folder.
-        :param storage Presentation storage.
-        :return: CaptionTracks
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('is_async'):
-            return self.get_video_caption_tracks_with_http_info(name, slide_index, shape_index, include_data, password, folder, storage, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_video_caption_tracks_with_http_info(name, slide_index, shape_index, include_data, password, folder, storage, **kwargs)  # noqa: E501
-            return data
-
-    def get_video_caption_tracks_with_http_info(self, name, slide_index, shape_index, include_data = None, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
-        """Gets video captions tracks.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass is_async=True
-        >>> thread = api.get_video_caption_tracks_with_http_info(name, slide_index, shape_index, include_data, password, folder, storage, is_async=True)
-        >>> result = thread.get()
-
-        :param is_async bool
-        :param name Document name.
-        :param slide_index Slide index.
-        :param shape_index Shape index (must refer to a picture frame).
-        :param include_data true to include caption data string values in the response.
-        :param password Document password.
-        :param folder Document folder.
-        :param storage Presentation storage.
-        :return: CaptionTracks
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = []  # noqa: E501
-        all_params.append('is_async')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_video_caption_tracks" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if not name:
-            raise ValueError("Missing the required parameter `name` when calling `get_video_caption_tracks`")  # noqa: E501
-        # verify the required parameter 'slide_index' is set
-        if not slide_index:
-            raise ValueError("Missing the required parameter `slide_index` when calling `get_video_caption_tracks`")  # noqa: E501
-        # verify the required parameter 'shape_index' is set
-        if not shape_index:
-            raise ValueError("Missing the required parameter `shape_index` when calling `get_video_caption_tracks`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        path_params['name'] = name  # noqa: E501
-        path_params['slideIndex'] = slide_index  # noqa: E501
-        path_params['shapeIndex'] = shape_index  # noqa: E501
-
-        query_params = []
-        if include_data:
-            query_params.append(('includeData', include_data))  # noqa: E501
-        if folder:
-            query_params.append(('folder', folder))  # noqa: E501
-        if storage:
-            query_params.append(('storage', storage))  # noqa: E501
-
-        header_params = {}
-        if password:
-            header_params['password'] = password  # noqa: E501
-
-        form_params = []
-        param_files = {}
-
-        body_params = None
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['JWT']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/captionTracks', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=param_files,
-            response_type='CaptionTracks',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -28252,229 +28260,6 @@ class SlidesApi(ApiBase):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def set_embedded_font_from_request(self, font, name, only_used = None, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
-        """Embeds font from request and returns presentation fonts info.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass is_async=True
-        >>> thread = api.(font, name, only_used, password, folder, storage, is_async=True)
-        >>> result = thread.get()
-
-        :param is_async bool
-        :param font Font data.
-        :param name Document name.
-        :param only_used Only used characters will be embedded.
-        :param password Document password.
-        :param folder Document folder.
-        :param storage Document storage.
-        :return: FontsData
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('is_async'):
-            return self.set_embedded_font_from_request_with_http_info(font, name, only_used, password, folder, storage, **kwargs)  # noqa: E501
-        else:
-            (data) = self.set_embedded_font_from_request_with_http_info(font, name, only_used, password, folder, storage, **kwargs)  # noqa: E501
-            return data
-
-    def set_embedded_font_from_request_with_http_info(self, font, name, only_used = None, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
-        """Embeds font from request and returns presentation fonts info.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass is_async=True
-        >>> thread = api.set_embedded_font_from_request_with_http_info(font, name, only_used, password, folder, storage, is_async=True)
-        >>> result = thread.get()
-
-        :param is_async bool
-        :param font Font data.
-        :param name Document name.
-        :param only_used Only used characters will be embedded.
-        :param password Document password.
-        :param folder Document folder.
-        :param storage Document storage.
-        :return: FontsData
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = []  # noqa: E501
-        all_params.append('is_async')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method set_embedded_font_from_request" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'font' is set
-        if not font:
-            raise ValueError("Missing the required parameter `font` when calling `set_embedded_font_from_request`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if not name:
-            raise ValueError("Missing the required parameter `name` when calling `set_embedded_font_from_request`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        path_params['name'] = name  # noqa: E501
-
-        query_params = []
-        if only_used:
-            query_params.append(('onlyUsed', only_used))  # noqa: E501
-        if folder:
-            query_params.append(('folder', folder))  # noqa: E501
-        if storage:
-            query_params.append(('storage', storage))  # noqa: E501
-
-        header_params = {}
-        if password:
-            header_params['password'] = password  # noqa: E501
-
-        form_params = []
-        param_files = {}
-        if font:
-            param_files['font'] = font  # noqa: E501
-
-        body_params = None
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['JWT']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/slides/{name}/fonts/embedded', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=param_files,
-            response_type='FontsData',  # noqa: E501
-            auth_settings=auth_settings,
-            is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', False),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def set_embedded_font_from_request_online(self, document, font, only_used = None, password = None, **kwargs):  # noqa: E501
-        """Embeds font from request and returns presentation.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass is_async=True
-        >>> thread = api.(document, font, only_used, password, is_async=True)
-        >>> result = thread.get()
-
-        :param is_async bool
-        :param document Document data.
-        :param font Font data.
-        :param only_used Only used characters will be embedded.
-        :param password Document password.
-        :return: file
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('is_async'):
-            return self.set_embedded_font_from_request_online_with_http_info(document, font, only_used, password, **kwargs)  # noqa: E501
-        else:
-            (data) = self.set_embedded_font_from_request_online_with_http_info(document, font, only_used, password, **kwargs)  # noqa: E501
-            return data
-
-    def set_embedded_font_from_request_online_with_http_info(self, document, font, only_used = None, password = None, **kwargs):  # noqa: E501
-        """Embeds font from request and returns presentation.  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass is_async=True
-        >>> thread = api.set_embedded_font_from_request_online_with_http_info(document, font, only_used, password, is_async=True)
-        >>> result = thread.get()
-
-        :param is_async bool
-        :param document Document data.
-        :param font Font data.
-        :param only_used Only used characters will be embedded.
-        :param password Document password.
-        :return: file
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = []  # noqa: E501
-        all_params.append('is_async')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method set_embedded_font_from_request_online" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'document' is set
-        if not document:
-            raise ValueError("Missing the required parameter `document` when calling `set_embedded_font_from_request_online`")  # noqa: E501
-        # verify the required parameter 'font' is set
-        if not font:
-            raise ValueError("Missing the required parameter `font` when calling `set_embedded_font_from_request_online`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if only_used:
-            query_params.append(('onlyUsed', only_used))  # noqa: E501
-
-        header_params = {}
-        if password:
-            header_params['password'] = password  # noqa: E501
-
-        form_params = []
-        param_files = {}
-        if document:
-            param_files['document'] = document  # noqa: E501
-        if font:
-            param_files['font'] = font  # noqa: E501
-
-        body_params = None
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['JWT']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/slides/fonts/embedded', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=param_files,
-            response_type='file',  # noqa: E501
-            auth_settings=auth_settings,
-            is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', False),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
     def set_embedded_font_online(self, document, font_name, only_used = None, password = None, fonts_folder = None, **kwargs):  # noqa: E501
         """Embeds specified font and returns presentation.  # noqa: E501
 
@@ -28572,6 +28357,231 @@ class SlidesApi(ApiBase):
 
         return self.api_client.call_api(
             '/slides/fonts/embedded/{fontName}', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=param_files,
+            response_type='file',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', False),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def set_embedded_fonts(self, name, fonts = None, font_names = None, only_used = None, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
+        """Embeds fonts with specified names and/or fonts from request and returns presentation fonts info.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.(name, fonts, font_names, only_used, password, folder, storage, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Document name.
+        :param fonts Font data.
+        :param font_names Font names.
+        :param only_used Only used characters will be embedded.
+        :param password Document password.
+        :param folder Document folder.
+        :param storage Document storage.
+        :return: FontsData
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.set_embedded_fonts_with_http_info(name, fonts, font_names, only_used, password, folder, storage, **kwargs)  # noqa: E501
+        else:
+            (data) = self.set_embedded_fonts_with_http_info(name, fonts, font_names, only_used, password, folder, storage, **kwargs)  # noqa: E501
+            return data
+
+    def set_embedded_fonts_with_http_info(self, name, fonts = None, font_names = None, only_used = None, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
+        """Embeds fonts with specified names and/or fonts from request and returns presentation fonts info.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.set_embedded_fonts_with_http_info(name, fonts, font_names, only_used, password, folder, storage, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Document name.
+        :param fonts Font data.
+        :param font_names Font names.
+        :param only_used Only used characters will be embedded.
+        :param password Document password.
+        :param folder Document folder.
+        :param storage Document storage.
+        :return: FontsData
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method set_embedded_fonts" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not name:
+            raise ValueError("Missing the required parameter `name` when calling `set_embedded_fonts`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = name  # noqa: E501
+
+        query_params = []
+        if font_names:
+            query_params.append(('fontNames', font_names))  # noqa: E501
+            collection_formats['fontNames'] = ''  # noqa: E501
+        if only_used:
+            query_params.append(('onlyUsed', only_used))  # noqa: E501
+        if folder:
+            query_params.append(('folder', folder))  # noqa: E501
+        if storage:
+            query_params.append(('storage', storage))  # noqa: E501
+
+        header_params = {}
+        if password:
+            header_params['password'] = password  # noqa: E501
+
+        form_params = []
+        param_files = {}
+        param_files = fonts
+
+        body_params = None
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/fonts/embedded', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=param_files,
+            response_type='FontsData',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', False),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def set_embedded_fonts_online(self, document, fonts = None, font_names = None, only_used = None, password = None, **kwargs):  # noqa: E501
+        """Embeds font from request and returns presentation.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.(document, fonts, font_names, only_used, password, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param document Document data.
+        :param fonts Font data.
+        :param font_names Font names.
+        :param only_used Only used characters will be embedded.
+        :param password Document password.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.set_embedded_fonts_online_with_http_info(document, fonts, font_names, only_used, password, **kwargs)  # noqa: E501
+        else:
+            (data) = self.set_embedded_fonts_online_with_http_info(document, fonts, font_names, only_used, password, **kwargs)  # noqa: E501
+            return data
+
+    def set_embedded_fonts_online_with_http_info(self, document, fonts = None, font_names = None, only_used = None, password = None, **kwargs):  # noqa: E501
+        """Embeds font from request and returns presentation.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.set_embedded_fonts_online_with_http_info(document, fonts, font_names, only_used, password, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param document Document data.
+        :param fonts Font data.
+        :param font_names Font names.
+        :param only_used Only used characters will be embedded.
+        :param password Document password.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method set_embedded_fonts_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'document' is set
+        if not document:
+            raise ValueError("Missing the required parameter `document` when calling `set_embedded_fonts_online`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if font_names:
+            query_params.append(('fontNames', font_names))  # noqa: E501
+            collection_formats['fontNames'] = ''  # noqa: E501
+        if only_used:
+            query_params.append(('onlyUsed', only_used))  # noqa: E501
+
+        header_params = {}
+        if password:
+            header_params['password'] = password  # noqa: E501
+
+        form_params = []
+        param_files = {}
+        if document:
+            param_files['document'] = document  # noqa: E501
+        param_files = fonts
+
+        body_params = None
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/fonts/embedded', 'POST',
             path_params,
             query_params,
             header_params,

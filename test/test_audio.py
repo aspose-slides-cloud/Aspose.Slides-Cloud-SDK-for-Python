@@ -4,10 +4,10 @@ import os
 from zipfile import ZipFile
 
 from test.base_test import BaseTest
-from asposeslidescloud import VideoFrame
+from asposeslidescloud import AudioFrame
 from asposeslidescloud.rest import ApiException
 
-class TestVideo(BaseTest):
+class TestAudio(BaseTest):
     def setUp(self):
         self.slide_index = 1
         self.image_index = 1
@@ -24,7 +24,7 @@ class TestVideo(BaseTest):
         track1_data = "WEBVTT\n\n00:00:00.000 --> 00:00:10.000\nCaption 1 text."
         track2_data = "WEBVTT\n\n00:00:00.000 --> 00:00:10.000\nCaption 2 text."
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
-        dto = VideoFrame()
+        dto = AudioFrame()
         dto.base64_data = 'bXAzc2FtcGxl'
         BaseTest.slides_api.create_shape(self.file_name, slide_index, dto, None, None, self.password, self.folder_name)
         captions = BaseTest.slides_api.get_caption_tracks(self.file_name, slide_index, shape_index, None, self.password, self.folder_name)

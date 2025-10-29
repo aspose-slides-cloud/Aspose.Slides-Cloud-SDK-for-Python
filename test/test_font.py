@@ -42,11 +42,21 @@ class TestFont(BaseTest):
             source = f.read()
         response = BaseTest.slides_api.set_embedded_font_online(source, self.font_name, False, self.password)
 
+    def test_set_embedded_fonts(self):
+        BaseTest.slides_api.copy_file(self.temp_path, self.path)
+        fonts = [ self.font_name ]
+        response = BaseTest.slides_api.set_embedded_fonts(self.file_name, None, fonts, False, self.password, self.folder_name)
+        self.assertEqual(None, response.list[0].is_embedded)
+        self.assertEqual(True, response.list[1].is_embedded)
+        self.assertEqual(True, response.list[2].is_embedded)
+        self.assertEqual(self.font_name, response.list[2].font_name)
+
     def test_set_embedded_font_from_request(self):
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
         with open(self.test_data_path + "/" + self.font_file_name, 'rb') as f:
             source = f.read()
-        response = BaseTest.slides_api.set_embedded_font_from_request(source, self.file_name, False, self.password, self.folder_name)
+        font_files = [ source ]
+        response = BaseTest.slides_api.set_embedded_fonts(self.file_name, font_files, None, False, self.password, self.folder_name)
         self.assertEqual(None, response.list[0].is_embedded)
         self.assertEqual(True, response.list[1].is_embedded)
         self.assertEqual(True, response.list[2].is_embedded)
@@ -55,9 +65,16 @@ class TestFont(BaseTest):
     def test_set_embedded_font_from_request_online(self):
         with open(self.local_path, 'rb') as f:
             source_file = f.read()
+        fonts = [ self.font_name ]
+        response = BaseTest.slides_api.set_embedded_fonts_online(source_file, None, fonts, False, self.password)
+
+    def test_set_embedded_font_from_request_online(self):
+        with open(self.local_path, 'rb') as f:
+            source_file = f.read()
         with open(self.test_data_path + "/" + self.font_file_name, 'rb') as f:
             source_font_file = f.read()
-        response = BaseTest.slides_api.set_embedded_font_from_request_online(source_file, source_font_file, False, self.password)
+        font_files = [ source_font_file ]
+        response = BaseTest.slides_api.set_embedded_fonts_online(source_file, font_files, None, False, self.password)
 
     def test_compress_embedded_fonts(self):
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
