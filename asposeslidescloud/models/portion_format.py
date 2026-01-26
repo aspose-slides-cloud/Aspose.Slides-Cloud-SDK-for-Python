@@ -70,7 +70,8 @@ class PortionFormat(object):
         'hyperlink_mouse_over': 'Hyperlink',
         'latin_font': 'str',
         'east_asian_font': 'str',
-        'complex_script_font': 'str'
+        'complex_script_font': 'str',
+        'spell_check': 'bool'
     }
 
     attribute_map = {
@@ -102,13 +103,14 @@ class PortionFormat(object):
         'hyperlink_mouse_over': 'hyperlinkMouseOver',
         'latin_font': 'latinFont',
         'east_asian_font': 'eastAsianFont',
-        'complex_script_font': 'complexScriptFont'
+        'complex_script_font': 'complexScriptFont',
+        'spell_check': 'spellCheck'
     }
 
     type_determiners = {
     }
 
-    def __init__(self, font_bold=None, font_italic=None, font_underline=None, strikethrough_type=None, text_cap_type=None, escapement=None, spacing=None, font_color=None, highlight_color=None, font_height=None, normalise_height=None, proof_disabled=None, smart_tag_clean=None, kerning_minimal_size=None, kumimoji=None, language_id=None, alternative_language_id=None, is_hard_underline_fill=None, is_hard_underline_line=None, fill_format=None, effect_format=None, line_format=None, underline_fill_format=None, underline_line_format=None, hyperlink_click=None, hyperlink_mouse_over=None, latin_font=None, east_asian_font=None, complex_script_font=None):  # noqa: E501
+    def __init__(self, font_bold=None, font_italic=None, font_underline=None, strikethrough_type=None, text_cap_type=None, escapement=None, spacing=None, font_color=None, highlight_color=None, font_height=None, normalise_height=None, proof_disabled=None, smart_tag_clean=None, kerning_minimal_size=None, kumimoji=None, language_id=None, alternative_language_id=None, is_hard_underline_fill=None, is_hard_underline_line=None, fill_format=None, effect_format=None, line_format=None, underline_fill_format=None, underline_line_format=None, hyperlink_click=None, hyperlink_mouse_over=None, latin_font=None, east_asian_font=None, complex_script_font=None, spell_check=None):  # noqa: E501
         """PortionFormat - a model defined in Swagger"""  # noqa: E501
 
         self._font_bold = None
@@ -140,6 +142,7 @@ class PortionFormat(object):
         self._latin_font = None
         self._east_asian_font = None
         self._complex_script_font = None
+        self._spell_check = None
 
         if font_bold is not None:
             self.font_bold = font_bold
@@ -199,6 +202,8 @@ class PortionFormat(object):
             self.east_asian_font = east_asian_font
         if complex_script_font is not None:
             self.complex_script_font = complex_script_font
+        if spell_check is not None:
+            self.spell_check = spell_check
 
     @property
     def font_bold(self):
@@ -997,6 +1002,28 @@ class PortionFormat(object):
         :type: str
         """
         self._complex_script_font = complex_script_font
+
+    @property
+    def spell_check(self):
+        """Gets the spell_check of this PortionFormat.  # noqa: E501
+
+        true to enable spell checking for the portion.  # noqa: E501
+
+        :return: The spell_check of this PortionFormat.  # noqa: E501
+        :rtype: bool
+        """
+        return self._spell_check
+
+    @spell_check.setter
+    def spell_check(self, spell_check):
+        """Sets the spell_check of this PortionFormat.
+
+        true to enable spell checking for the portion.  # noqa: E501
+
+        :param spell_check: The spell_check of this PortionFormat.  # noqa: E501
+        :type: bool
+        """
+        self._spell_check = spell_check
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -65,7 +65,8 @@ class SlideShowTransition(object):
         'corner_and_center_direction': 'str',
         'shred_pattern': 'str',
         'orientation': 'str',
-        'spokes': 'int'
+        'spokes': 'int',
+        'duration': 'int'
     }
 
     attribute_map = {
@@ -92,13 +93,14 @@ class SlideShowTransition(object):
         'corner_and_center_direction': 'cornerAndCenterDirection',
         'shred_pattern': 'shredPattern',
         'orientation': 'orientation',
-        'spokes': 'spokes'
+        'spokes': 'spokes',
+        'duration': 'duration'
     }
 
     type_determiners = {
     }
 
-    def __init__(self, type=None, advance_after=None, advance_after_time=None, advance_on_click=None, sound_is_built_in=None, sound_loop=None, sound_mode=None, sound_name=None, speed=None, corner_direction=None, eight_direction=None, in_out_direction=None, has_bounce=None, side_direction=None, pattern=None, left_right_direction=None, morph_type=None, from_black=None, orientation_direction=None, through_black=None, corner_and_center_direction=None, shred_pattern=None, orientation=None, spokes=None):  # noqa: E501
+    def __init__(self, type=None, advance_after=None, advance_after_time=None, advance_on_click=None, sound_is_built_in=None, sound_loop=None, sound_mode=None, sound_name=None, speed=None, corner_direction=None, eight_direction=None, in_out_direction=None, has_bounce=None, side_direction=None, pattern=None, left_right_direction=None, morph_type=None, from_black=None, orientation_direction=None, through_black=None, corner_and_center_direction=None, shred_pattern=None, orientation=None, spokes=None, duration=None):  # noqa: E501
         """SlideShowTransition - a model defined in Swagger"""  # noqa: E501
 
         self._type = None
@@ -125,6 +127,7 @@ class SlideShowTransition(object):
         self._shred_pattern = None
         self._orientation = None
         self._spokes = None
+        self._duration = None
 
         if type is not None:
             self.type = type
@@ -174,6 +177,8 @@ class SlideShowTransition(object):
             self.orientation = orientation
         if spokes is not None:
             self.spokes = spokes
+        if duration is not None:
+            self.duration = duration
 
     @property
     def type(self):
@@ -926,6 +931,28 @@ class SlideShowTransition(object):
         :type: int
         """
         self._spokes = spokes
+
+    @property
+    def duration(self):
+        """Gets the duration of this SlideShowTransition.  # noqa: E501
+
+        The duration of the slide transition effect in milliseconds. If not set, the duration is determined automatically based on Speed and Type values.  # noqa: E501
+
+        :return: The duration of this SlideShowTransition.  # noqa: E501
+        :rtype: int
+        """
+        return self._duration
+
+    @duration.setter
+    def duration(self, duration):
+        """Sets the duration of this SlideShowTransition.
+
+        The duration of the slide transition effect in milliseconds. If not set, the duration is determined automatically based on Speed and Type values.  # noqa: E501
+
+        :param duration: The duration of this SlideShowTransition.  # noqa: E501
+        :type: int
+        """
+        self._duration = duration
 
     def to_dict(self):
         """Returns the model properties as a dict"""

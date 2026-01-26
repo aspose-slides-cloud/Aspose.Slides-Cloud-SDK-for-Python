@@ -79,7 +79,7 @@ class MathElement(object):
         :type: str
         """
         if type is not None:
-            allowed_values = ["Accent", "Array", "Bar", "Block", "BorderBox", "Box", "Delimiter", "Text", "Fraction", "Function", "GroupingCharacter", "LeftSubSuperscriptElement", "Limit", "Matrix", "NaryOperator", "Radical", "RightSubSuperscriptElement", "SubscriptElement", "SuperscriptElement"]  # noqa: E501
+            allowed_values = ["Accent", "Array", "Bar", "Block", "BorderBox", "Box", "Delimiter", "Text", "Fraction", "Function", "GroupingCharacter", "LeftSubSuperscriptElement", "Limit", "Matrix", "NaryOperator", "Radical", "RightSubSuperscriptElement", "SubscriptElement", "SuperscriptElement", "Phantom"]  # noqa: E501
             if type.isdigit():
                 int_type = int(type)
                 if int_type < 0 or int_type >= len(allowed_values):

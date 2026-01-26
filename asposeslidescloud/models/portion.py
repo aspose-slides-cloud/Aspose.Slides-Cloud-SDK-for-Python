@@ -62,6 +62,7 @@ class Portion(ResourceBase):
         'smart_tag_clean': 'bool',
         'kerning_minimal_size': 'float',
         'kumimoji': 'str',
+        'spell_check': 'bool',
         'language_id': 'str',
         'alternative_language_id': 'str',
         'is_hard_underline_fill': 'str',
@@ -98,6 +99,7 @@ class Portion(ResourceBase):
         'smart_tag_clean': 'smartTagClean',
         'kerning_minimal_size': 'kerningMinimalSize',
         'kumimoji': 'kumimoji',
+        'spell_check': 'spellCheck',
         'language_id': 'languageId',
         'alternative_language_id': 'alternativeLanguageId',
         'is_hard_underline_fill': 'isHardUnderlineFill',
@@ -117,7 +119,7 @@ class Portion(ResourceBase):
     type_determiners = {
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, text=None, math_paragraph=None, font_bold=None, font_italic=None, font_underline=None, strikethrough_type=None, text_cap_type=None, escapement=None, spacing=None, font_color=None, highlight_color=None, font_height=None, normalise_height=None, proof_disabled=None, smart_tag_clean=None, kerning_minimal_size=None, kumimoji=None, language_id=None, alternative_language_id=None, is_hard_underline_fill=None, is_hard_underline_line=None, fill_format=None, effect_format=None, line_format=None, underline_fill_format=None, underline_line_format=None, hyperlink_click=None, hyperlink_mouse_over=None, latin_font=None, east_asian_font=None, complex_script_font=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, text=None, math_paragraph=None, font_bold=None, font_italic=None, font_underline=None, strikethrough_type=None, text_cap_type=None, escapement=None, spacing=None, font_color=None, highlight_color=None, font_height=None, normalise_height=None, proof_disabled=None, smart_tag_clean=None, kerning_minimal_size=None, kumimoji=None, spell_check=None, language_id=None, alternative_language_id=None, is_hard_underline_fill=None, is_hard_underline_line=None, fill_format=None, effect_format=None, line_format=None, underline_fill_format=None, underline_line_format=None, hyperlink_click=None, hyperlink_mouse_over=None, latin_font=None, east_asian_font=None, complex_script_font=None):  # noqa: E501
         """Portion - a model defined in Swagger"""  # noqa: E501
         super(Portion, self).__init__(self_uri, alternate_links)
 
@@ -138,6 +140,7 @@ class Portion(ResourceBase):
         self._smart_tag_clean = None
         self._kerning_minimal_size = None
         self._kumimoji = None
+        self._spell_check = None
         self._language_id = None
         self._alternative_language_id = None
         self._is_hard_underline_fill = None
@@ -187,6 +190,8 @@ class Portion(ResourceBase):
             self.kerning_minimal_size = kerning_minimal_size
         if kumimoji is not None:
             self.kumimoji = kumimoji
+        if spell_check is not None:
+            self.spell_check = spell_check
         if language_id is not None:
             self.language_id = language_id
         if alternative_language_id is not None:
@@ -717,6 +722,28 @@ class Portion(ResourceBase):
                     .format(kumimoji, allowed_values)
                 )
         self._kumimoji = kumimoji
+
+    @property
+    def spell_check(self):
+        """Gets the spell_check of this Portion.  # noqa: E501
+
+        true to enable spell checking for the portion.  # noqa: E501
+
+        :return: The spell_check of this Portion.  # noqa: E501
+        :rtype: bool
+        """
+        return self._spell_check
+
+    @spell_check.setter
+    def spell_check(self, spell_check):
+        """Sets the spell_check of this Portion.
+
+        true to enable spell checking for the portion.  # noqa: E501
+
+        :param spell_check: The spell_check of this Portion.  # noqa: E501
+        :type: bool
+        """
+        self._spell_check = spell_check
 
     @property
     def language_id(self):
