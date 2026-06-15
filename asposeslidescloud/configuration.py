@@ -42,7 +42,8 @@ class Configuration(object):
         """
         # Default Base url
         self.base_url = "https://api.aspose.cloud"
-        self.auth_base_url = "https://api.aspose.cloud"
+        self._async_base_url = None
+        self._auth_base_url = None
         self.version = "v3.0"
         # Temp file folder for downloading files
         self.temp_folder_path = None
@@ -90,6 +91,22 @@ class Configuration(object):
         self.proxy = None
         # Safe chars for path_param
         self.safe_chars_for_path_param = '/'
+
+    @property
+    def async_base_url(self):
+        return self._async_base_url if self._async_base_url is not None else self.base_url
+
+    @async_base_url.setter
+    def async_base_url(self, value):
+        self._async_base_url = value
+
+    @property
+    def auth_base_url(self):
+        return self._auth_base_url if self._auth_base_url is not None else self.base_url
+
+    @auth_base_url.setter
+    def auth_base_url(self, value):
+        self._auth_base_url = value
 
     @property
     def host(self):
@@ -190,5 +207,5 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 3.0\n"\
-               "SDK Package Version: 26.1.0".\
+               "SDK Package Version: 26.6.0".\
                format(env=sys.platform, pyversion=sys.version)

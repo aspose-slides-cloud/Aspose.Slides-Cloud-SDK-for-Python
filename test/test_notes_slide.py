@@ -56,7 +56,7 @@ class TestNotesSlide(BaseTest):
         dto.height = 200
         dto.shape_type = "Rectangle"
         dto.text = "New shape"
-        shape = BaseTest.slides_api.create_special_slide_shape(self.file_name, self.slide_index, 'notesSlide', dto, None, None, self.password, self.folder_name)
+        shape = BaseTest.slides_api.create_special_slide_shape(self.file_name, self.slide_index, 'notesSlide', dto, None, None, None, self.password, self.folder_name)
         self.assertEqual(dto.text, shape.text)
         shapes = BaseTest.slides_api.get_special_slide_shapes(self.file_name, self.slide_index, 'notesSlide', self.password, self.folder_name)
         self.assertEqual(shape_count + 1, len(shapes.shapes_links))

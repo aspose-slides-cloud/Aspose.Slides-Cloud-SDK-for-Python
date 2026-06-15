@@ -66,7 +66,8 @@ class SmartArt(ShapeBase):
         'quick_style': 'str',
         'color_style': 'str',
         'nodes': 'list[SmartArtNode]',
-        'is_reversed': 'bool'
+        'is_reversed': 'bool',
+        'default_paragraph_format': 'ParagraphFormat'
     }
 
     attribute_map = {
@@ -93,14 +94,15 @@ class SmartArt(ShapeBase):
         'quick_style': 'quickStyle',
         'color_style': 'colorStyle',
         'nodes': 'nodes',
-        'is_reversed': 'isReversed'
+        'is_reversed': 'isReversed',
+        'default_paragraph_format': 'defaultParagraphFormat'
     }
 
     type_determiners = {
         'type': 'SmartArt',
     }
 
-    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, is_decorative=None, x=None, y=None, z_order_position=None, fill_format=None, effect_format=None, three_d_format=None, line_format=None, hyperlink_click=None, hyperlink_mouse_over=None, type='SmartArt', layout=None, quick_style=None, color_style=None, nodes=None, is_reversed=None):  # noqa: E501
+    def __init__(self, self_uri=None, alternate_links=None, name=None, width=None, height=None, alternative_text=None, alternative_text_title=None, hidden=None, is_decorative=None, x=None, y=None, z_order_position=None, fill_format=None, effect_format=None, three_d_format=None, line_format=None, hyperlink_click=None, hyperlink_mouse_over=None, type='SmartArt', layout=None, quick_style=None, color_style=None, nodes=None, is_reversed=None, default_paragraph_format=None):  # noqa: E501
         """SmartArt - a model defined in Swagger"""  # noqa: E501
         super(SmartArt, self).__init__(self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, is_decorative, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type)
 
@@ -109,6 +111,7 @@ class SmartArt(ShapeBase):
         self._color_style = None
         self._nodes = None
         self._is_reversed = None
+        self._default_paragraph_format = None
         self.type = 'SmartArt'
 
         self.layout = layout
@@ -118,6 +121,8 @@ class SmartArt(ShapeBase):
             self.nodes = nodes
         if is_reversed is not None:
             self.is_reversed = is_reversed
+        if default_paragraph_format is not None:
+            self.default_paragraph_format = default_paragraph_format
 
     @property
     def layout(self):
@@ -276,6 +281,28 @@ class SmartArt(ShapeBase):
         :type: bool
         """
         self._is_reversed = is_reversed
+
+    @property
+    def default_paragraph_format(self):
+        """Gets the default_paragraph_format of this SmartArt.  # noqa: E501
+
+        Default paragraph format applied to all nodes. Write-only: not populated on read since there is no corresponding property at the SmartArt shape level in Aspose.Slides.  # noqa: E501
+
+        :return: The default_paragraph_format of this SmartArt.  # noqa: E501
+        :rtype: ParagraphFormat
+        """
+        return self._default_paragraph_format
+
+    @default_paragraph_format.setter
+    def default_paragraph_format(self, default_paragraph_format):
+        """Sets the default_paragraph_format of this SmartArt.
+
+        Default paragraph format applied to all nodes. Write-only: not populated on read since there is no corresponding property at the SmartArt shape level in Aspose.Slides.  # noqa: E501
+
+        :param default_paragraph_format: The default_paragraph_format of this SmartArt.  # noqa: E501
+        :type: ParagraphFormat
+        """
+        self._default_paragraph_format = default_paragraph_format
 
     def to_dict(self):
         """Returns the model properties as a dict"""

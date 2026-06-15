@@ -26,7 +26,7 @@ class TestAudio(BaseTest):
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
         dto = AudioFrame()
         dto.base64_data = 'bXAzc2FtcGxl'
-        BaseTest.slides_api.create_shape(self.file_name, slide_index, dto, None, None, self.password, self.folder_name)
+        BaseTest.slides_api.create_shape(self.file_name, slide_index, dto, None, None, None, self.password, self.folder_name)
         captions = BaseTest.slides_api.get_caption_tracks(self.file_name, slide_index, shape_index, None, self.password, self.folder_name)
         self.assertEqual(0, len(captions.items))
 

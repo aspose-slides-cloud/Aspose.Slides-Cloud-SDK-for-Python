@@ -52,6 +52,7 @@ class PptxExportOptions(ExportOptions):
         'format': 'str',
         'conformance': 'str',
         'zip64_mode': 'str',
+        'compression_level': 'str',
         'refresh_thumbnail': 'bool'
     }
 
@@ -65,6 +66,7 @@ class PptxExportOptions(ExportOptions):
         'format': 'format',
         'conformance': 'conformance',
         'zip64_mode': 'zip64Mode',
+        'compression_level': 'compressionLevel',
         'refresh_thumbnail': 'refreshThumbnail'
     }
 
@@ -72,12 +74,13 @@ class PptxExportOptions(ExportOptions):
         'format': 'pptx',
     }
 
-    def __init__(self, default_regular_font=None, delete_embedded_binary_objects=None, gradient_style=None, font_fallback_rules=None, font_subst_rules=None, skip_java_script_links=None, format='pptx', conformance=None, zip64_mode=None, refresh_thumbnail=None):  # noqa: E501
+    def __init__(self, default_regular_font=None, delete_embedded_binary_objects=None, gradient_style=None, font_fallback_rules=None, font_subst_rules=None, skip_java_script_links=None, format='pptx', conformance=None, zip64_mode=None, compression_level=None, refresh_thumbnail=None):  # noqa: E501
         """PptxExportOptions - a model defined in Swagger"""  # noqa: E501
         super(PptxExportOptions, self).__init__(default_regular_font, delete_embedded_binary_objects, gradient_style, font_fallback_rules, font_subst_rules, skip_java_script_links, format)
 
         self._conformance = None
         self._zip64_mode = None
+        self._compression_level = None
         self._refresh_thumbnail = None
         self.format = 'pptx'
 
@@ -85,6 +88,8 @@ class PptxExportOptions(ExportOptions):
             self.conformance = conformance
         if zip64_mode is not None:
             self.zip64_mode = zip64_mode
+        if compression_level is not None:
+            self.compression_level = compression_level
         if refresh_thumbnail is not None:
             self.refresh_thumbnail = refresh_thumbnail
 
@@ -163,6 +168,44 @@ class PptxExportOptions(ExportOptions):
                     .format(zip64_mode, allowed_values)
                 )
         self._zip64_mode = zip64_mode
+
+    @property
+    def compression_level(self):
+        """Gets the compression_level of this PptxExportOptions.  # noqa: E501
+
+        The compression level used when saving the presentation document. Higher compression levels produce smaller files but require more processing time. The actual compression ratio depends on the content of the presentation. The default value is CompressionLevel.Level6.  # noqa: E501
+
+        :return: The compression_level of this PptxExportOptions.  # noqa: E501
+        :rtype: str
+        """
+        return self._compression_level
+
+    @compression_level.setter
+    def compression_level(self, compression_level):
+        """Sets the compression_level of this PptxExportOptions.
+
+        The compression level used when saving the presentation document. Higher compression levels produce smaller files but require more processing time. The actual compression ratio depends on the content of the presentation. The default value is CompressionLevel.Level6.  # noqa: E501
+
+        :param compression_level: The compression_level of this PptxExportOptions.  # noqa: E501
+        :type: str
+        """
+        if compression_level is not None:
+            allowed_values = ["None", "Level1", "Level2", "Level3", "Level4", "Level5", "Level6", "Level7", "Level8", "Level9"]  # noqa: E501
+            if compression_level.isdigit():
+                int_compression_level = int(compression_level)
+                if int_compression_level < 0 or int_compression_level >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `compression_level` ({0}), must be one of {1}"  # noqa: E501
+                        .format(compression_level, allowed_values)
+                    )
+                self._compression_level = allowed_values[int_compression_level]
+                return
+            if compression_level not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `compression_level` ({0}), must be one of {1}"  # noqa: E501
+                    .format(compression_level, allowed_values)
+                )
+        self._compression_level = compression_level
 
     @property
     def refresh_thumbnail(self):

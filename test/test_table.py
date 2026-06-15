@@ -283,3 +283,21 @@ class TestTable(BaseTest):
             self.password,
             self.folder_name)
         self.assertEqual(1, len(response.items))
+    def test_import_table_from_workbook(self):
+        BaseTest.slides_api.copy_file(self.temp_path, self.path)
+        with open(self.test_data_path + "/oleObject.xlsx", 'rb') as f:
+            document = f.read()
+        shape = BaseTest.slides_api.import_table_from_workbook(self.file_name, self.slide_index, "Sheet1", "A1:B5",
+                document, None, None, None, None, self.password, self.folder_name)
+        self.assertIsNotNone(shape)
+        self.assertEqual("Table", shape.type)
+
+    def test_import_table_from_workbook_by_path(self):
+        BaseTest.slides_api.copy_file(self.temp_path, self.path)
+        with open(self.test_data_path + "/oleObject.xlsx", 'rb') as f:
+            document = f.read()
+        BaseTest.slides_api.upload_file(self.folder_name + "/oleObject.xlsx", document)
+        shape = BaseTest.slides_api.import_table_from_workbook(self.file_name, self.slide_index, "Sheet1", "A1:B5",
+                None, None, None, self.folder_name + "/oleObject.xlsx", None, self.password, self.folder_name)
+        self.assertIsNotNone(shape)
+        self.assertEqual("Table", shape.type)

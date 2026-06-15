@@ -47,7 +47,7 @@ class TestNullableField(BaseTest):
         test_axis.max_value = max1
         test_axes.horizontal_axis = test_axis
         test_dto.axes = test_axes
-        result = BaseTest.slides_api.create_shape(self.file_name, slide_index, test_dto, None, None, self.password, self.folder_name)
+        result = BaseTest.slides_api.create_shape(self.file_name, slide_index, test_dto, None, None, None, self.password, self.folder_name)
 
         result = BaseTest.slides_api.get_shape(self.file_name, slide_index, shape_index, self.password, self.folder_name)
         self.assertEqual(min1, result.axes.horizontal_axis.min_value)

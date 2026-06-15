@@ -59,7 +59,7 @@ class TestTextFormat(BaseTest):
         dto.text_frame_format = text_frame_format
 
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
-        shape = BaseTest.slides_api.create_shape(self.file_name, self.slide_index, dto, None, None, self.password, self.folder_name)
+        shape = BaseTest.slides_api.create_shape(self.file_name, self.slide_index, dto, None, None, None, self.password, self.folder_name)
         self.assertTrue(isinstance(shape, Shape))
 
     def test_text_frame_format(self):
@@ -85,6 +85,6 @@ class TestTextFormat(BaseTest):
         dto.text_frame = text_frame_format
 		
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
-        shape = BaseTest.slides_api.create_shape(self.file_name, self.slide_index, dto, None, None, self.password, self.folder_name)
+        shape = BaseTest.slides_api.create_shape(self.file_name, self.slide_index, dto, None, None, None, self.password, self.folder_name)
         self.assertTrue(isinstance(shape, Shape))
 

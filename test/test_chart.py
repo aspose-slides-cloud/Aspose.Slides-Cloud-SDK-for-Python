@@ -52,7 +52,7 @@ class TestChart(BaseTest):
         category3 = ChartCategory()
         category3.value = "Category3"
         chart.categories = [category1, category2, category3]
-        result = BaseTest.slides_api.create_shape(self.file_name, self.slide_index, chart, None, None, self.password, self.folder_name)
+        result = BaseTest.slides_api.create_shape(self.file_name, self.slide_index, chart, None, None, None, self.password, self.folder_name)
         self.assertEqual(2, len(result.series))
         self.assertEqual(3, len(result.categories))
 
@@ -119,7 +119,7 @@ class TestChart(BaseTest):
         category3 = ChartCategory()
         category3.value = "Category3"
         chart.categories = [category1, category2, category3]
-        result = BaseTest.slides_api.create_shape(self.file_name, self.slide_index, chart, None, None, self.password, self.folder_name)
+        result = BaseTest.slides_api.create_shape(self.file_name, self.slide_index, chart, None, None, None, self.password, self.folder_name)
         self.assertEqual(2, len(result.series))
         self.assertEqual(3, len(result.categories))
 
@@ -166,7 +166,7 @@ class TestChart(BaseTest):
         category3 = ChartCategory()
         category3.value = "Category3"
         chart.categories = [category1, category2, category3]
-        result = BaseTest.slides_api.create_shape(self.file_name, self.slide_index, chart, None, None, self.password, self.folder_name)
+        result = BaseTest.slides_api.create_shape(self.file_name, self.slide_index, chart, None, None, None, self.password, self.folder_name)
         self.assertEqual(2, len(result.series))
         self.assertEqual(3, len(result.categories))
 
@@ -358,7 +358,7 @@ class TestChart(BaseTest):
         category4.value = "Stem2"
         category4.level = 1
         chart.categories = [category1, category2, category3, category4]
-        result = BaseTest.slides_api.create_shape(self.file_name, self.slide_index, chart, None, None, self.password, self.folder_name)
+        result = BaseTest.slides_api.create_shape(self.file_name, self.slide_index, chart, None, None, None, self.password, self.folder_name)
         self.assertEqual(1, len(result.series))
         self.assertEqual(4, len(result.categories))
 
@@ -412,7 +412,7 @@ class TestChart(BaseTest):
         category8.value = "Category 8"
 
         chart.categories = [category1, category2, category3, category4, category5, category6, category7, category8]
-        result = BaseTest.slides_api.create_shape(self.file_name, self.slide_index, chart, None, None, self.password, self.folder_name)
+        result = BaseTest.slides_api.create_shape(self.file_name, self.slide_index, chart, None, None, None, self.password, self.folder_name)
         self.assertEqual("ClusteredColumn", result.chart_type)
 
     def test_hide_chart_legend(self):
@@ -578,5 +578,23 @@ class TestChart(BaseTest):
         category3 = ChartCategory()
         category3.value = "Category3"
         chart.categories = [category1, category2, category3]
-        result = BaseTest.slides_api.create_shape(self.file_name, self.slide_index, chart, None, None, self.password, self.folder_name)
+        result = BaseTest.slides_api.create_shape(self.file_name, self.slide_index, chart, None, None, None, self.password, self.folder_name)
         self.assertEqual(90, result.series[0].data_points[2].value)
+    def test_import_chart_from_workbook(self):
+        BaseTest.slides_api.copy_file(self.temp_path, self.path)
+        with open(self.test_data_path + "/oleObject.xlsx", 'rb') as f:
+            document = f.read()
+        shape = BaseTest.slides_api.import_chart_from_workbook(self.file_name, self.slide_index, "Sheet1",
+                document, None, 1, None, None, None, None, None, self.password, self.folder_name)
+        self.assertIsNotNone(shape)
+        self.assertEqual("Chart", shape.type)
+
+    def test_import_chart_from_workbook_by_path(self):
+        BaseTest.slides_api.copy_file(self.temp_path, self.path)
+        with open(self.test_data_path + "/oleObject.xlsx", 'rb') as f:
+            document = f.read()
+        BaseTest.slides_api.upload_file(self.folder_name + "/oleObject.xlsx", document)
+        shape = BaseTest.slides_api.import_chart_from_workbook(self.file_name, self.slide_index, "Sheet1",
+                None, None, 1, None, None, None, self.folder_name + "/oleObject.xlsx", None, self.password, self.folder_name)
+        self.assertIsNotNone(shape)
+        self.assertEqual("Chart", shape.type)

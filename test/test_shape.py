@@ -6,7 +6,7 @@ import os
 from asposeslidescloud import LineToPathSegment, MoveToPathSegment, GeometryPath, ClosePathSegment, GeometryPaths, \
     Connector, ResourceUri, GroupShape, Table, TableColumn, TableCell, TableRow, Chart, SmartArt, SmartArtNode, \
     OleObjectFrame, VideoFrame, AudioFrame, PictureFrame, GraphicalObject, Shape, ZoomFrame, \
-    SectionZoomFrame, Portion, SolidFill, PictureFill, GradientFill, GradientFillStop
+    SectionZoomFrame, Portion, SolidFill, PictureFill, GradientFill, GradientFillStop, ParagraphFormat
 from asposeslidescloud.rest import ApiException
 from test.base_test import BaseTest
 
@@ -52,14 +52,14 @@ class TestShape(BaseTest):
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
         dto = Shape()
         dto.shape_type = 'Callout1'
-        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, self.password, self.folder_name)
+        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, None, self.password, self.folder_name)
         self.assertTrue(isinstance(result, Shape))
 
     def test_shape_empty(self):
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
         dto = Shape()
         try:
-            BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, self.password, self.folder_name)
+            BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, None, self.password, self.folder_name)
             self.fail("Shape with undefinined type should not have been created")
         except ApiException as ex:
             self.assertEqual(400, ex.status)
@@ -68,7 +68,7 @@ class TestShape(BaseTest):
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
         dto = GraphicalObject()
         try:
-            BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, self.password, self.folder_name)
+            BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, None, self.password, self.folder_name)
             self.fail("GraphicalObject should not have been created")
         except ApiException as ex:
             self.assertEqual(400, ex.status)
@@ -79,14 +79,14 @@ class TestShape(BaseTest):
         fill = PictureFill()
         fill.base64_data = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXY5g+ffp/AAZTAsWGL27gAAAAAElFTkSuQmCC"
         dto.picture_fill_format = fill
-        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, self.password, self.folder_name)
+        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, None, self.password, self.folder_name)
         self.assertTrue(isinstance(result, PictureFrame))
 
     def test_picture_frame_empty(self):
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
         dto = PictureFrame()
         try:
-            BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, self.password, self.folder_name)
+            BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, None, self.password, self.folder_name)
             self.fail("PictureFrame with undefinined data should not have been created")
         except ApiException as ex:
             self.assertEqual(400, ex.status)
@@ -95,14 +95,14 @@ class TestShape(BaseTest):
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
         dto = AudioFrame()
         dto.base64_data = "bXAzc2FtcGxl"
-        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, self.password, self.folder_name)
+        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, None, self.password, self.folder_name)
         self.assertTrue(isinstance(result, AudioFrame))
 
     def test_audio_frame_empty(self):
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
         dto = AudioFrame()
         try:
-            BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, self.password, self.folder_name)
+            BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, None, self.password, self.folder_name)
             self.fail("AudioFrame with undefinined data should not have been created")
         except ApiException as ex:
             self.assertEqual(400, ex.status)
@@ -111,14 +111,14 @@ class TestShape(BaseTest):
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
         dto = VideoFrame()
         dto.base64_data = "bXAzc2FtcGxl"
-        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, self.password, self.folder_name)
+        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, None, self.password, self.folder_name)
         self.assertTrue(isinstance(result, VideoFrame))
 
     def test_video_frame_empty(self):
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
         dto = VideoFrame()
         try:
-            BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, self.password, self.folder_name)
+            BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, None, self.password, self.folder_name)
             self.fail("VideoFrame with undefinined data should not have been created")
         except ApiException as ex:
             self.assertEqual(400, ex.status)
@@ -127,7 +127,7 @@ class TestShape(BaseTest):
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
         dto = OleObjectFrame()
         try:
-            BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, self.password, self.folder_name)
+            BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, None, self.password, self.folder_name)
             self.fail("OleObjectFrame should not have been created")
         except ApiException as ex:
             self.assertEqual(400, ex.status)
@@ -153,7 +153,7 @@ class TestShape(BaseTest):
         node2.text = "Second"
         node2.org_chart_layout = 'Initial'
         dto.nodes = [ node1, node2 ]
-        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, self.password, self.folder_name)
+        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, None, self.password, self.folder_name)
         self.assertTrue(isinstance(result, SmartArt))
 
     def test_smart_art_text_formatting(self):
@@ -180,14 +180,14 @@ class TestShape(BaseTest):
     def test_smart_art_empty(self):
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
         dto = SmartArt()
-        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, self.password, self.folder_name)
+        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, None, self.password, self.folder_name)
         self.assertTrue(isinstance(result, SmartArt))
 
     def test_chart_empty(self):
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
         dto = Chart()
         try:
-            BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, self.password, self.folder_name)
+            BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, None, self.password, self.folder_name)
             self.fail("Chart with undefined series should not have been created")
         except ApiException as ex:
             self.assertEqual(500, ex.status)
@@ -256,14 +256,14 @@ class TestShape(BaseTest):
         dto.columns = [ column1, column2, column3, column4 ]
         dto.first_row = True
         dto.horizontal_banding = True
-        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, self.password, self.folder_name)
+        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, None, self.password, self.folder_name)
         self.assertTrue(isinstance(result, Table))
 
     def test_table_empty(self):
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
         dto = Table()
         try:
-            BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, self.password, self.folder_name)
+            BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, None, self.password, self.folder_name)
             self.fail("Table with undefinined cell data should not have been created")
         except ApiException as ex:
             self.assertEqual(400, ex.status)
@@ -271,7 +271,7 @@ class TestShape(BaseTest):
     def test_group_shape_empty(self):
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
         dto = GroupShape()
-        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, self.password, self.folder_name)
+        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, None, self.password, self.folder_name)
         self.assertTrue(isinstance(result, GroupShape))
 
     def test_connector_add(self):
@@ -284,13 +284,13 @@ class TestShape(BaseTest):
         end = ResourceUri()
         end.href = "https://api.aspose.cloud/v3.0/slides/myPresentation.pptx/slides/1/shapes/2"
         dto.end_shape_connected_to = end
-        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, self.password, self.folder_name)
+        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, None, self.password, self.folder_name)
         self.assertTrue(isinstance(result, Connector))
 
     def test_connector_empty(self):
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
         dto = Connector()
-        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, self.password, self.folder_name)
+        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, None, self.password, self.folder_name)
         self.assertTrue(isinstance(result, Connector))
 
     def test_create_sub_shape(self):
@@ -301,7 +301,7 @@ class TestShape(BaseTest):
         dto.y = 200
         dto.width = 50
         dto.height = 50
-        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, self.password, self.folder_name, None, "4")
+        result = BaseTest.slides_api.create_shape(self.file_name, 1, dto, None, None, None, self.password, self.folder_name, None, "4")
         self.assertTrue(isinstance(result, Shape))
 
     def test_update_shape(self):
@@ -452,7 +452,7 @@ class TestShape(BaseTest):
         dto.width = 200
         dto.height = 100
         dto.target_slide_index = 2
-        shape = BaseTest.slides_api.create_shape(self.file_name, 3, dto, None, None, self.password, self.folder_name)
+        shape = BaseTest.slides_api.create_shape(self.file_name, 3, dto, None, None, None, self.password, self.folder_name)
         self.assertTrue(isinstance(shape, ZoomFrame))
         self.assertEqual(dto.target_slide_index, shape.target_slide_index)
 
@@ -464,7 +464,7 @@ class TestShape(BaseTest):
         dto.width = 200
         dto.height = 100
         dto.target_section_index = 2
-        shape = BaseTest.slides_api.create_shape(self.file_name, 3, dto, None, None, self.password, self.folder_name)
+        shape = BaseTest.slides_api.create_shape(self.file_name, 3, dto, None, None, None, self.password, self.folder_name)
         self.assertTrue(isinstance(shape,SectionZoomFrame))
         self.assertEqual(dto.target_section_index, shape.target_section_index)
 
@@ -477,7 +477,7 @@ class TestShape(BaseTest):
         dto.height = 200
         dto.link_path = "oleObject.xlsx"
         dto.object_prog_id = "Excel.Sheet.8"
-        shape = BaseTest.slides_api.create_shape(self.file_name, 3, dto, None, None, self.password, self.folder_name)
+        shape = BaseTest.slides_api.create_shape(self.file_name, 3, dto, None, None, None, self.password, self.folder_name)
         self.assertTrue(isinstance(shape, OleObjectFrame))
         self.assertEqual(shape.link_path, dto.link_path)
 
@@ -492,7 +492,7 @@ class TestShape(BaseTest):
         dto.height = 200
         dto.embedded_file_base64_data = base64.b64encode(document).decode('utf-8')
         dto.embedded_file_extension = "xlsx"
-        shape = BaseTest.slides_api.create_shape(self.file_name, 3, dto, None, None, self.password, self.folder_name)
+        shape = BaseTest.slides_api.create_shape(self.file_name, 3, dto, None, None, None, self.password, self.folder_name)
         self.assertTrue(isinstance(shape, OleObjectFrame))
         self.assertIsNotNone(shape.embedded_file_base64_data)
 
@@ -503,7 +503,7 @@ class TestShape(BaseTest):
         self.assertEqual(0, len(shapes.shapes_links))
 
         dto = GroupShape()
-        BaseTest.slides_api.create_shape(self.file_name, slide_index, dto, None, None, self.password, self.folder_name)
+        BaseTest.slides_api.create_shape(self.file_name, slide_index, dto, None, None, None, self.password, self.folder_name)
         shape1 = Shape()
         shape1.shape_type = "Rectangle"
         shape1.x = 50
@@ -525,9 +525,9 @@ class TestShape(BaseTest):
         shape3.width = 50
         shape3.height = 50
 
-        BaseTest.slides_api.create_shape(self.file_name, slide_index, shape1, None, None, self.password, self.folder_name, None, "1")
-        BaseTest.slides_api.create_shape(self.file_name, slide_index, shape2, None, None, self.password, self.folder_name, None, "1")
-        BaseTest.slides_api.create_shape(self.file_name, slide_index, shape3, None, None, self.password, self.folder_name, None, "1")
+        BaseTest.slides_api.create_shape(self.file_name, slide_index, shape1, None, None, None, self.password, self.folder_name, None, "1")
+        BaseTest.slides_api.create_shape(self.file_name, slide_index, shape2, None, None, None, self.password, self.folder_name, None, "1")
+        BaseTest.slides_api.create_shape(self.file_name, slide_index, shape3, None, None, None, self.password, self.folder_name, None, "1")
 
         shapes = BaseTest.slides_api.get_shapes(self.file_name, slide_index, self.password, self.folder_name)
         self.assertEqual(1, len(shapes.shapes_links))
@@ -580,3 +580,20 @@ class TestShape(BaseTest):
         dto.text = "Shape text"
 
         result = BaseTest.slides_api.download_shape_from_dto("png", dto)
+    def test_smart_art_node_default_paragraph_format(self):
+        BaseTest.slides_api.copy_file(self.temp_path, self.path)
+        existing = BaseTest.slides_api.get_shape(self.file_name, 7, 1, self.password, self.folder_name)
+        paragraph_format = ParagraphFormat()
+        bullet_fill = SolidFill()
+        bullet_fill.color = "#FFFF0000"
+        paragraph_format.bullet_fill_format = bullet_fill
+        existing.nodes[0].default_paragraph_format = paragraph_format
+        updated = BaseTest.slides_api.update_shape(self.file_name, 7, 1, existing, self.password, self.folder_name)
+        self.assertIsNotNone(updated.nodes[0].default_paragraph_format)
+        self.assertEqual("Solid", updated.nodes[0].default_paragraph_format.bullet_fill_format.type)
+        self.assertEqual("#FFFF0000", updated.nodes[0].default_paragraph_format.bullet_fill_format.color)
+
+    def test_shape_clone_from_slide(self):
+        BaseTest.slides_api.copy_file(self.temp_path, self.path)
+        shape = BaseTest.slides_api.create_shape(self.file_name, 3, None, 1, 1, None, None, self.password, self.folder_name)
+        self.assertIsNotNone(shape)

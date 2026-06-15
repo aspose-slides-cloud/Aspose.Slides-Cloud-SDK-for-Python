@@ -3758,12 +3758,12 @@ class SlidesApi(ApiBase):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_shape(self, name, slide_index, dto = None, shape_to_clone = None, position = None, password = None, folder = None, storage = None, sub_shape = None, **kwargs):  # noqa: E501
+    def create_shape(self, name, slide_index, dto = None, shape_to_clone = None, clone_from_slide = None, position = None, password = None, folder = None, storage = None, sub_shape = None, **kwargs):  # noqa: E501
         """Create new shape.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
-        >>> thread = api.(name, slide_index, dto, shape_to_clone, position, password, folder, storage, sub_shape, is_async=True)
+        >>> thread = api.(name, slide_index, dto, shape_to_clone, clone_from_slide, position, password, folder, storage, sub_shape, is_async=True)
         >>> result = thread.get()
 
         :param is_async bool
@@ -3771,6 +3771,7 @@ class SlidesApi(ApiBase):
         :param slide_index Slide index.
         :param dto Shape DTO.
         :param shape_to_clone Optional index for clone shape instead of adding a new one.
+        :param clone_from_slide Optional index of the slide to clone the shape from. When set, shapeToClone refers to a shape on that slide.
         :param position Position of the new shape in the list. Default is at the end of the list.
         :param password Document password.
         :param folder Document folder.
@@ -3782,17 +3783,17 @@ class SlidesApi(ApiBase):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('is_async'):
-            return self.create_shape_with_http_info(name, slide_index, dto, shape_to_clone, position, password, folder, storage, sub_shape, **kwargs)  # noqa: E501
+            return self.create_shape_with_http_info(name, slide_index, dto, shape_to_clone, clone_from_slide, position, password, folder, storage, sub_shape, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_shape_with_http_info(name, slide_index, dto, shape_to_clone, position, password, folder, storage, sub_shape, **kwargs)  # noqa: E501
+            (data) = self.create_shape_with_http_info(name, slide_index, dto, shape_to_clone, clone_from_slide, position, password, folder, storage, sub_shape, **kwargs)  # noqa: E501
             return data
 
-    def create_shape_with_http_info(self, name, slide_index, dto = None, shape_to_clone = None, position = None, password = None, folder = None, storage = None, sub_shape = None, **kwargs):  # noqa: E501
+    def create_shape_with_http_info(self, name, slide_index, dto = None, shape_to_clone = None, clone_from_slide = None, position = None, password = None, folder = None, storage = None, sub_shape = None, **kwargs):  # noqa: E501
         """Create new shape.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
-        >>> thread = api.create_shape_with_http_info(name, slide_index, dto, shape_to_clone, position, password, folder, storage, sub_shape, is_async=True)
+        >>> thread = api.create_shape_with_http_info(name, slide_index, dto, shape_to_clone, clone_from_slide, position, password, folder, storage, sub_shape, is_async=True)
         >>> result = thread.get()
 
         :param is_async bool
@@ -3800,6 +3801,7 @@ class SlidesApi(ApiBase):
         :param slide_index Slide index.
         :param dto Shape DTO.
         :param shape_to_clone Optional index for clone shape instead of adding a new one.
+        :param clone_from_slide Optional index of the slide to clone the shape from. When set, shapeToClone refers to a shape on that slide.
         :param position Position of the new shape in the list. Default is at the end of the list.
         :param password Document password.
         :param folder Document folder.
@@ -3841,6 +3843,8 @@ class SlidesApi(ApiBase):
         query_params = []
         if shape_to_clone:
             query_params.append(('shapeToClone', shape_to_clone))  # noqa: E501
+        if clone_from_slide:
+            query_params.append(('cloneFromSlide', clone_from_slide))  # noqa: E501
         if position:
             query_params.append(('position', position))  # noqa: E501
         if folder:
@@ -4794,12 +4798,12 @@ class SlidesApi(ApiBase):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_special_slide_shape(self, name, slide_index, slide_type, dto, shape_to_clone = None, position = None, password = None, folder = None, storage = None, sub_shape = None, **kwargs):  # noqa: E501
+    def create_special_slide_shape(self, name, slide_index, slide_type, dto, shape_to_clone = None, clone_from_slide = None, position = None, password = None, folder = None, storage = None, sub_shape = None, **kwargs):  # noqa: E501
         """Create new shape.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
-        >>> thread = api.(name, slide_index, slide_type, dto, shape_to_clone, position, password, folder, storage, sub_shape, is_async=True)
+        >>> thread = api.(name, slide_index, slide_type, dto, shape_to_clone, clone_from_slide, position, password, folder, storage, sub_shape, is_async=True)
         >>> result = thread.get()
 
         :param is_async bool
@@ -4808,6 +4812,7 @@ class SlidesApi(ApiBase):
         :param slide_type Slide type (master, layout or notes).
         :param dto Shape DTO.
         :param shape_to_clone Optional index for clone shape instead of adding a new one.
+        :param clone_from_slide Optional index of the slide to clone the shape from. When set, shapeToClone refers to a shape on that slide.
         :param position Position of the new shape in the list. Default is at the end of the list.
         :param password Document password.
         :param folder Document folder.
@@ -4819,17 +4824,17 @@ class SlidesApi(ApiBase):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('is_async'):
-            return self.create_special_slide_shape_with_http_info(name, slide_index, slide_type, dto, shape_to_clone, position, password, folder, storage, sub_shape, **kwargs)  # noqa: E501
+            return self.create_special_slide_shape_with_http_info(name, slide_index, slide_type, dto, shape_to_clone, clone_from_slide, position, password, folder, storage, sub_shape, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_special_slide_shape_with_http_info(name, slide_index, slide_type, dto, shape_to_clone, position, password, folder, storage, sub_shape, **kwargs)  # noqa: E501
+            (data) = self.create_special_slide_shape_with_http_info(name, slide_index, slide_type, dto, shape_to_clone, clone_from_slide, position, password, folder, storage, sub_shape, **kwargs)  # noqa: E501
             return data
 
-    def create_special_slide_shape_with_http_info(self, name, slide_index, slide_type, dto, shape_to_clone = None, position = None, password = None, folder = None, storage = None, sub_shape = None, **kwargs):  # noqa: E501
+    def create_special_slide_shape_with_http_info(self, name, slide_index, slide_type, dto, shape_to_clone = None, clone_from_slide = None, position = None, password = None, folder = None, storage = None, sub_shape = None, **kwargs):  # noqa: E501
         """Create new shape.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
-        >>> thread = api.create_special_slide_shape_with_http_info(name, slide_index, slide_type, dto, shape_to_clone, position, password, folder, storage, sub_shape, is_async=True)
+        >>> thread = api.create_special_slide_shape_with_http_info(name, slide_index, slide_type, dto, shape_to_clone, clone_from_slide, position, password, folder, storage, sub_shape, is_async=True)
         >>> result = thread.get()
 
         :param is_async bool
@@ -4838,6 +4843,7 @@ class SlidesApi(ApiBase):
         :param slide_type Slide type (master, layout or notes).
         :param dto Shape DTO.
         :param shape_to_clone Optional index for clone shape instead of adding a new one.
+        :param clone_from_slide Optional index of the slide to clone the shape from. When set, shapeToClone refers to a shape on that slide.
         :param position Position of the new shape in the list. Default is at the end of the list.
         :param password Document password.
         :param folder Document folder.
@@ -4889,6 +4895,8 @@ class SlidesApi(ApiBase):
         query_params = []
         if shape_to_clone:
             query_params.append(('shapeToClone', shape_to_clone))  # noqa: E501
+        if clone_from_slide:
+            query_params.append(('cloneFromSlide', clone_from_slide))  # noqa: E501
         if position:
             query_params.append(('position', position))  # noqa: E501
         if folder:
@@ -22675,6 +22683,155 @@ class SlidesApi(ApiBase):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def import_chart_from_workbook(self, name, slide_index, worksheet_name, document = None, chart_name = None, chart_index = None, x = None, y = None, embed_all_workbook = None, workbook_path = None, workbook_storage = None, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
+        """Imports a chart from an Excel workbook and adds it to the slide.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.(name, slide_index, worksheet_name, document, chart_name, chart_index, x, y, embed_all_workbook, workbook_path, workbook_storage, password, folder, storage, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Document name.
+        :param slide_index Slide index.
+        :param worksheet_name The name of the worksheet that contains the chart.
+        :param document Excel workbook data.
+        :param chart_name The name of the chart. Required if chartIndex is not specified.
+        :param chart_index The zero-based index of the chart in the worksheet. Takes precedence over chartName.
+        :param x X coordinate of the chart (EMU).
+        :param y Y coordinate of the chart (EMU).
+        :param embed_all_workbook If true, the entire workbook is embedded; if false, only chart data.
+        :param workbook_path Storage path to the workbook. If omitted, the workbook must be uploaded as multipart form data.
+        :param workbook_storage Storage name for workbookPath.
+        :param password Document password.
+        :param folder Presentation folder.
+        :param storage Presentation storage.
+        :return: ShapeBase
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.import_chart_from_workbook_with_http_info(name, slide_index, worksheet_name, document, chart_name, chart_index, x, y, embed_all_workbook, workbook_path, workbook_storage, password, folder, storage, **kwargs)  # noqa: E501
+        else:
+            (data) = self.import_chart_from_workbook_with_http_info(name, slide_index, worksheet_name, document, chart_name, chart_index, x, y, embed_all_workbook, workbook_path, workbook_storage, password, folder, storage, **kwargs)  # noqa: E501
+            return data
+
+    def import_chart_from_workbook_with_http_info(self, name, slide_index, worksheet_name, document = None, chart_name = None, chart_index = None, x = None, y = None, embed_all_workbook = None, workbook_path = None, workbook_storage = None, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
+        """Imports a chart from an Excel workbook and adds it to the slide.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.import_chart_from_workbook_with_http_info(name, slide_index, worksheet_name, document, chart_name, chart_index, x, y, embed_all_workbook, workbook_path, workbook_storage, password, folder, storage, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Document name.
+        :param slide_index Slide index.
+        :param worksheet_name The name of the worksheet that contains the chart.
+        :param document Excel workbook data.
+        :param chart_name The name of the chart. Required if chartIndex is not specified.
+        :param chart_index The zero-based index of the chart in the worksheet. Takes precedence over chartName.
+        :param x X coordinate of the chart (EMU).
+        :param y Y coordinate of the chart (EMU).
+        :param embed_all_workbook If true, the entire workbook is embedded; if false, only chart data.
+        :param workbook_path Storage path to the workbook. If omitted, the workbook must be uploaded as multipart form data.
+        :param workbook_storage Storage name for workbookPath.
+        :param password Document password.
+        :param folder Presentation folder.
+        :param storage Presentation storage.
+        :return: ShapeBase
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method import_chart_from_workbook" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not name:
+            raise ValueError("Missing the required parameter `name` when calling `import_chart_from_workbook`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not slide_index:
+            raise ValueError("Missing the required parameter `slide_index` when calling `import_chart_from_workbook`")  # noqa: E501
+        # verify the required parameter 'worksheet_name' is set
+        if not worksheet_name:
+            raise ValueError("Missing the required parameter `worksheet_name` when calling `import_chart_from_workbook`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = name  # noqa: E501
+        path_params['slideIndex'] = slide_index  # noqa: E501
+
+        query_params = []
+        if worksheet_name:
+            query_params.append(('worksheetName', worksheet_name))  # noqa: E501
+        if chart_name:
+            query_params.append(('chartName', chart_name))  # noqa: E501
+        if chart_index:
+            query_params.append(('chartIndex', chart_index))  # noqa: E501
+        if x:
+            query_params.append(('x', x))  # noqa: E501
+        if y:
+            query_params.append(('y', y))  # noqa: E501
+        if embed_all_workbook:
+            query_params.append(('embedAllWorkbook', embed_all_workbook))  # noqa: E501
+        if workbook_path:
+            query_params.append(('workbookPath', workbook_path))  # noqa: E501
+        if workbook_storage:
+            query_params.append(('workbookStorage', workbook_storage))  # noqa: E501
+        if folder:
+            query_params.append(('folder', folder))  # noqa: E501
+        if storage:
+            query_params.append(('storage', storage))  # noqa: E501
+
+        header_params = {}
+        if password:
+            header_params['password'] = password  # noqa: E501
+
+        form_params = []
+        param_files = {}
+        if document:
+            param_files['document'] = document  # noqa: E501
+
+        body_params = None
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/fromExcelChart', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=param_files,
+            response_type='ShapeBase',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', False),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def import_from_html(self, name, html = None, password = None, folder = None, storage = None, position = None, use_slide_with_index_as_start = None, **kwargs):  # noqa: E501
         """Create presentation document from html.  # noqa: E501
 
@@ -23038,6 +23195,150 @@ class SlidesApi(ApiBase):
             post_params=form_params,
             files=param_files,
             response_type='Shapes',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', False),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def import_table_from_workbook(self, name, slide_index, worksheet_name, cell_range, document = None, x = None, y = None, workbook_path = None, workbook_storage = None, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
+        """Imports a table from an Excel workbook and adds it to the slide.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.(name, slide_index, worksheet_name, cell_range, document, x, y, workbook_path, workbook_storage, password, folder, storage, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Document name.
+        :param slide_index Slide index.
+        :param worksheet_name The name of the worksheet that contains the table.
+        :param cell_range The cell range that defines the table (e.g. \"A1:D10\").
+        :param document Excel workbook data.
+        :param x X coordinate of the table (EMU).
+        :param y Y coordinate of the table (EMU).
+        :param workbook_path Storage path to the workbook. If omitted, the workbook must be uploaded as multipart form data.
+        :param workbook_storage Storage name for workbookPath.
+        :param password Document password.
+        :param folder Presentation folder.
+        :param storage Presentation storage.
+        :return: ShapeBase
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.import_table_from_workbook_with_http_info(name, slide_index, worksheet_name, cell_range, document, x, y, workbook_path, workbook_storage, password, folder, storage, **kwargs)  # noqa: E501
+        else:
+            (data) = self.import_table_from_workbook_with_http_info(name, slide_index, worksheet_name, cell_range, document, x, y, workbook_path, workbook_storage, password, folder, storage, **kwargs)  # noqa: E501
+            return data
+
+    def import_table_from_workbook_with_http_info(self, name, slide_index, worksheet_name, cell_range, document = None, x = None, y = None, workbook_path = None, workbook_storage = None, password = None, folder = None, storage = None, **kwargs):  # noqa: E501
+        """Imports a table from an Excel workbook and adds it to the slide.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.import_table_from_workbook_with_http_info(name, slide_index, worksheet_name, cell_range, document, x, y, workbook_path, workbook_storage, password, folder, storage, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Document name.
+        :param slide_index Slide index.
+        :param worksheet_name The name of the worksheet that contains the table.
+        :param cell_range The cell range that defines the table (e.g. \"A1:D10\").
+        :param document Excel workbook data.
+        :param x X coordinate of the table (EMU).
+        :param y Y coordinate of the table (EMU).
+        :param workbook_path Storage path to the workbook. If omitted, the workbook must be uploaded as multipart form data.
+        :param workbook_storage Storage name for workbookPath.
+        :param password Document password.
+        :param folder Presentation folder.
+        :param storage Presentation storage.
+        :return: ShapeBase
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method import_table_from_workbook" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not name:
+            raise ValueError("Missing the required parameter `name` when calling `import_table_from_workbook`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not slide_index:
+            raise ValueError("Missing the required parameter `slide_index` when calling `import_table_from_workbook`")  # noqa: E501
+        # verify the required parameter 'worksheet_name' is set
+        if not worksheet_name:
+            raise ValueError("Missing the required parameter `worksheet_name` when calling `import_table_from_workbook`")  # noqa: E501
+        # verify the required parameter 'cell_range' is set
+        if not cell_range:
+            raise ValueError("Missing the required parameter `cell_range` when calling `import_table_from_workbook`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = name  # noqa: E501
+        path_params['slideIndex'] = slide_index  # noqa: E501
+
+        query_params = []
+        if worksheet_name:
+            query_params.append(('worksheetName', worksheet_name))  # noqa: E501
+        if cell_range:
+            query_params.append(('cellRange', cell_range))  # noqa: E501
+        if x:
+            query_params.append(('x', x))  # noqa: E501
+        if y:
+            query_params.append(('y', y))  # noqa: E501
+        if workbook_path:
+            query_params.append(('workbookPath', workbook_path))  # noqa: E501
+        if workbook_storage:
+            query_params.append(('workbookStorage', workbook_storage))  # noqa: E501
+        if folder:
+            query_params.append(('folder', folder))  # noqa: E501
+        if storage:
+            query_params.append(('storage', storage))  # noqa: E501
+
+        header_params = {}
+        if password:
+            header_params['password'] = password  # noqa: E501
+
+        form_params = []
+        param_files = {}
+        if document:
+            param_files['document'] = document  # noqa: E501
+
+        body_params = None
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/fromExcelTable', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=param_files,
+            response_type='ShapeBase',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),

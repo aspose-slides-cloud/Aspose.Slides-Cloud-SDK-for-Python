@@ -47,7 +47,8 @@ class SmartArtNode(object):
         'is_assistant': 'bool',
         'text': 'str',
         'org_chart_layout': 'str',
-        'paragraphs': 'ResourceUri'
+        'paragraphs': 'ResourceUri',
+        'default_paragraph_format': 'ParagraphFormat'
     }
 
     attribute_map = {
@@ -56,13 +57,14 @@ class SmartArtNode(object):
         'is_assistant': 'isAssistant',
         'text': 'text',
         'org_chart_layout': 'orgChartLayout',
-        'paragraphs': 'paragraphs'
+        'paragraphs': 'paragraphs',
+        'default_paragraph_format': 'defaultParagraphFormat'
     }
 
     type_determiners = {
     }
 
-    def __init__(self, nodes=None, shapes=None, is_assistant=None, text=None, org_chart_layout=None, paragraphs=None):  # noqa: E501
+    def __init__(self, nodes=None, shapes=None, is_assistant=None, text=None, org_chart_layout=None, paragraphs=None, default_paragraph_format=None):  # noqa: E501
         """SmartArtNode - a model defined in Swagger"""  # noqa: E501
 
         self._nodes = None
@@ -71,6 +73,7 @@ class SmartArtNode(object):
         self._text = None
         self._org_chart_layout = None
         self._paragraphs = None
+        self._default_paragraph_format = None
 
         if nodes is not None:
             self.nodes = nodes
@@ -83,6 +86,8 @@ class SmartArtNode(object):
         self.org_chart_layout = org_chart_layout
         if paragraphs is not None:
             self.paragraphs = paragraphs
+        if default_paragraph_format is not None:
+            self.default_paragraph_format = default_paragraph_format
 
     @property
     def nodes(self):
@@ -231,6 +236,28 @@ class SmartArtNode(object):
         :type: ResourceUri
         """
         self._paragraphs = paragraphs
+
+    @property
+    def default_paragraph_format(self):
+        """Gets the default_paragraph_format of this SmartArtNode.  # noqa: E501
+
+        Default paragraph format for the node's text frame.  # noqa: E501
+
+        :return: The default_paragraph_format of this SmartArtNode.  # noqa: E501
+        :rtype: ParagraphFormat
+        """
+        return self._default_paragraph_format
+
+    @default_paragraph_format.setter
+    def default_paragraph_format(self, default_paragraph_format):
+        """Sets the default_paragraph_format of this SmartArtNode.
+
+        Default paragraph format for the node's text frame.  # noqa: E501
+
+        :param default_paragraph_format: The default_paragraph_format of this SmartArtNode.  # noqa: E501
+        :type: ParagraphFormat
+        """
+        self._default_paragraph_format = default_paragraph_format
 
     def to_dict(self):
         """Returns the model properties as a dict"""
