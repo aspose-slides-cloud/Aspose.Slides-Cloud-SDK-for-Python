@@ -146,7 +146,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -287,7 +287,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -391,7 +391,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -486,9 +486,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -612,7 +612,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -731,9 +731,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
         if options:
@@ -861,9 +861,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
         if options:
@@ -976,7 +976,7 @@ class SlidesApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -1083,7 +1083,7 @@ class SlidesApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -1209,7 +1209,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -1339,7 +1339,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -1466,7 +1466,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -1581,7 +1581,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if effect:
@@ -1698,7 +1698,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if sequence:
@@ -1821,7 +1821,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if effect:
@@ -1948,7 +1948,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if data:
@@ -2071,7 +2071,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if category:
@@ -2200,7 +2200,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if data_point:
@@ -2323,7 +2323,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if series:
@@ -2444,7 +2444,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -2556,9 +2556,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
         if dto:
@@ -2656,7 +2656,7 @@ class SlidesApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -2764,9 +2764,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if image:
-            param_files['image'] = image  # noqa: E501
+            param_files.append(image)  # noqa: E501
 
         body_params = None
         if picture_frame:
@@ -2867,11 +2867,11 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
         if image:
-            param_files['image'] = image  # noqa: E501
+            param_files.append(image)  # noqa: E501
 
         body_params = None
         if picture_frame:
@@ -2988,7 +2988,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -3119,7 +3119,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -3256,7 +3256,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -3368,9 +3368,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if data:
-            param_files['data'] = data  # noqa: E501
+            param_files.append(data)  # noqa: E501
 
         body_params = None
 
@@ -3486,7 +3486,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -3611,7 +3611,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if data:
@@ -3731,7 +3731,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -3859,7 +3859,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -3973,7 +3973,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -4101,7 +4101,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -4225,7 +4225,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if effect:
@@ -4351,7 +4351,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if sequence:
@@ -4483,7 +4483,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if effect:
@@ -4623,7 +4623,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -4769,7 +4769,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -4911,7 +4911,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -5046,7 +5046,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -5187,7 +5187,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -5314,7 +5314,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -5425,7 +5425,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if module_dto:
@@ -5549,7 +5549,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if shape:
@@ -5664,9 +5664,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
         if shape:
@@ -5778,7 +5778,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -5894,7 +5894,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -6010,7 +6010,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -6132,7 +6132,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -6242,7 +6242,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -6352,7 +6352,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -6462,7 +6462,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -6584,7 +6584,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -6700,7 +6700,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -6822,7 +6822,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -6950,7 +6950,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -7072,7 +7072,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -7180,7 +7180,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -7279,9 +7279,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -7385,7 +7385,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -7495,7 +7495,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -7605,7 +7605,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -7706,9 +7706,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -7808,7 +7808,7 @@ class SlidesApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -7908,7 +7908,7 @@ class SlidesApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -8018,7 +8018,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -8144,7 +8144,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -8269,7 +8269,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -8401,7 +8401,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -8532,7 +8532,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -8636,7 +8636,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -8731,9 +8731,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -8847,7 +8847,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -8960,7 +8960,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -9080,7 +9080,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -9199,7 +9199,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -9309,7 +9309,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -9423,7 +9423,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -9528,9 +9528,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -9639,7 +9639,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -9765,7 +9765,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -9884,7 +9884,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -10009,7 +10009,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -10134,7 +10134,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -10265,7 +10265,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -10384,7 +10384,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -10503,7 +10503,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -10638,7 +10638,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -10772,7 +10772,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -10913,7 +10913,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -11053,7 +11053,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -11182,7 +11182,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -11310,7 +11310,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -11444,7 +11444,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -11584,7 +11584,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -11710,7 +11710,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -11814,7 +11814,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -11909,9 +11909,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -12019,7 +12019,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -12118,9 +12118,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -12230,7 +12230,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -12338,7 +12338,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -12437,9 +12437,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -12539,7 +12539,7 @@ class SlidesApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -12662,7 +12662,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -12772,7 +12772,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -12873,9 +12873,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -12989,9 +12989,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -13108,7 +13108,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -13212,7 +13212,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -13307,9 +13307,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -13417,9 +13417,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -13556,7 +13556,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -13687,7 +13687,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -13809,9 +13809,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -13824,6 +13824,157 @@ class SlidesApi(ApiBase):
 
         return self.api_client.call_api(
             '/slides/slides/{slideIndex}/notesSlide/{format}', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=param_files,
+            response_type='file',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', False),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def download_paragraph(self, name, slide_index, shape_index, paragraph_index, format, scale_x = None, scale_y = None, quality = None, password = None, folder = None, storage = None, fonts_folder = None, sub_shape = None, **kwargs):  # noqa: E501
+        """Render paragraph to specified picture format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.(name, slide_index, shape_index, paragraph_index, format, scale_x, scale_y, quality, password, folder, storage, fonts_folder, sub_shape, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Presentation name.
+        :param slide_index Slide index.
+        :param shape_index Index of shape starting from 1
+        :param paragraph_index Paragraph index.
+        :param format Export picture format.
+        :param scale_x X scale ratio.
+        :param scale_y Y scale ratio.
+        :param quality Image quality (1 to 100); applies to JPEG only.
+        :param password Document password.
+        :param folder Presentation folder.
+        :param storage Presentation storage.
+        :param fonts_folder Fonts folder.
+        :param sub_shape Sub-shape path (e.g. \"3\", \"3/shapes/2).
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.download_paragraph_with_http_info(name, slide_index, shape_index, paragraph_index, format, scale_x, scale_y, quality, password, folder, storage, fonts_folder, sub_shape, **kwargs)  # noqa: E501
+        else:
+            (data) = self.download_paragraph_with_http_info(name, slide_index, shape_index, paragraph_index, format, scale_x, scale_y, quality, password, folder, storage, fonts_folder, sub_shape, **kwargs)  # noqa: E501
+            return data
+
+    def download_paragraph_with_http_info(self, name, slide_index, shape_index, paragraph_index, format, scale_x = None, scale_y = None, quality = None, password = None, folder = None, storage = None, fonts_folder = None, sub_shape = None, **kwargs):  # noqa: E501
+        """Render paragraph to specified picture format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.download_paragraph_with_http_info(name, slide_index, shape_index, paragraph_index, format, scale_x, scale_y, quality, password, folder, storage, fonts_folder, sub_shape, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Presentation name.
+        :param slide_index Slide index.
+        :param shape_index Index of shape starting from 1
+        :param paragraph_index Paragraph index.
+        :param format Export picture format.
+        :param scale_x X scale ratio.
+        :param scale_y Y scale ratio.
+        :param quality Image quality (1 to 100); applies to JPEG only.
+        :param password Document password.
+        :param folder Presentation folder.
+        :param storage Presentation storage.
+        :param fonts_folder Fonts folder.
+        :param sub_shape Sub-shape path (e.g. \"3\", \"3/shapes/2).
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method download_paragraph" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not name:
+            raise ValueError("Missing the required parameter `name` when calling `download_paragraph`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not slide_index:
+            raise ValueError("Missing the required parameter `slide_index` when calling `download_paragraph`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not shape_index:
+            raise ValueError("Missing the required parameter `shape_index` when calling `download_paragraph`")  # noqa: E501
+        # verify the required parameter 'paragraph_index' is set
+        if not paragraph_index:
+            raise ValueError("Missing the required parameter `paragraph_index` when calling `download_paragraph`")  # noqa: E501
+        # verify the required parameter 'format' is set
+        if not format:
+            raise ValueError("Missing the required parameter `format` when calling `download_paragraph`")  # noqa: E501
+        # verify the value of parameter 'format' is valid
+        if not format.upper() in ImageExportFormat.__dict__:
+            raise ValueError("Invalid value for parameter `format` when calling `download_paragraph`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = name  # noqa: E501
+        path_params['slideIndex'] = slide_index  # noqa: E501
+        path_params['shapeIndex'] = shape_index  # noqa: E501
+        path_params['paragraphIndex'] = paragraph_index  # noqa: E501
+        path_params['format'] = format  # noqa: E501
+
+        query_params = []
+        if scale_x:
+            query_params.append(('scaleX', scale_x))  # noqa: E501
+        if scale_y:
+            query_params.append(('scaleY', scale_y))  # noqa: E501
+        if quality:
+            query_params.append(('quality', quality))  # noqa: E501
+        if folder:
+            query_params.append(('folder', folder))  # noqa: E501
+        if storage:
+            query_params.append(('storage', storage))  # noqa: E501
+        if fonts_folder:
+            query_params.append(('fontsFolder', fonts_folder))  # noqa: E501
+        if sub_shape:
+            query_params.append(('subShape', sub_shape))  # noqa: E501
+
+        header_params = {}
+        if password:
+            header_params['password'] = password  # noqa: E501
+
+        form_params = []
+        param_files = []
+
+        body_params = None
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/{format}', 'POST',
             path_params,
             query_params,
             header_params,
@@ -13935,7 +14086,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if options:
@@ -14087,7 +14238,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if options:
@@ -14189,7 +14340,7 @@ class SlidesApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -14332,9 +14483,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
         if options:
@@ -14469,7 +14620,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if options:
@@ -14599,9 +14750,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
         if options:
@@ -14762,7 +14913,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if options:
@@ -14777,6 +14928,165 @@ class SlidesApi(ApiBase):
 
         return self.api_client.call_api(
             '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{shapeIndex}/{format}', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=param_files,
+            response_type='file',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', False),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def download_table_cell_paragraph(self, name, slide_index, shape_index, row_index, cell_index, paragraph_index, format, scale_x = None, scale_y = None, quality = None, password = None, folder = None, storage = None, fonts_folder = None, **kwargs):  # noqa: E501
+        """Render table cell paragraph to specified picture format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.(name, slide_index, shape_index, row_index, cell_index, paragraph_index, format, scale_x, scale_y, quality, password, folder, storage, fonts_folder, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Document name.
+        :param slide_index Slide index.
+        :param shape_index Shape index.
+        :param row_index Row index.
+        :param cell_index Table cell index.
+        :param paragraph_index Paragraph index.
+        :param format Export picture format.
+        :param scale_x X scale ratio.
+        :param scale_y Y scale ratio.
+        :param quality Image quality (1 to 100); applies to JPEG only.
+        :param password Document password.
+        :param folder Document folder.
+        :param storage Document storage.
+        :param fonts_folder Fonts folder.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.download_table_cell_paragraph_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, format, scale_x, scale_y, quality, password, folder, storage, fonts_folder, **kwargs)  # noqa: E501
+        else:
+            (data) = self.download_table_cell_paragraph_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, format, scale_x, scale_y, quality, password, folder, storage, fonts_folder, **kwargs)  # noqa: E501
+            return data
+
+    def download_table_cell_paragraph_with_http_info(self, name, slide_index, shape_index, row_index, cell_index, paragraph_index, format, scale_x = None, scale_y = None, quality = None, password = None, folder = None, storage = None, fonts_folder = None, **kwargs):  # noqa: E501
+        """Render table cell paragraph to specified picture format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.download_table_cell_paragraph_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, format, scale_x, scale_y, quality, password, folder, storage, fonts_folder, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Document name.
+        :param slide_index Slide index.
+        :param shape_index Shape index.
+        :param row_index Row index.
+        :param cell_index Table cell index.
+        :param paragraph_index Paragraph index.
+        :param format Export picture format.
+        :param scale_x X scale ratio.
+        :param scale_y Y scale ratio.
+        :param quality Image quality (1 to 100); applies to JPEG only.
+        :param password Document password.
+        :param folder Document folder.
+        :param storage Document storage.
+        :param fonts_folder Fonts folder.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method download_table_cell_paragraph" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not name:
+            raise ValueError("Missing the required parameter `name` when calling `download_table_cell_paragraph`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not slide_index:
+            raise ValueError("Missing the required parameter `slide_index` when calling `download_table_cell_paragraph`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not shape_index:
+            raise ValueError("Missing the required parameter `shape_index` when calling `download_table_cell_paragraph`")  # noqa: E501
+        # verify the required parameter 'row_index' is set
+        if not row_index:
+            raise ValueError("Missing the required parameter `row_index` when calling `download_table_cell_paragraph`")  # noqa: E501
+        # verify the required parameter 'cell_index' is set
+        if not cell_index:
+            raise ValueError("Missing the required parameter `cell_index` when calling `download_table_cell_paragraph`")  # noqa: E501
+        # verify the required parameter 'paragraph_index' is set
+        if not paragraph_index:
+            raise ValueError("Missing the required parameter `paragraph_index` when calling `download_table_cell_paragraph`")  # noqa: E501
+        # verify the required parameter 'format' is set
+        if not format:
+            raise ValueError("Missing the required parameter `format` when calling `download_table_cell_paragraph`")  # noqa: E501
+        # verify the value of parameter 'format' is valid
+        if not format.upper() in ImageExportFormat.__dict__:
+            raise ValueError("Invalid value for parameter `format` when calling `download_table_cell_paragraph`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = name  # noqa: E501
+        path_params['slideIndex'] = slide_index  # noqa: E501
+        path_params['shapeIndex'] = shape_index  # noqa: E501
+        path_params['rowIndex'] = row_index  # noqa: E501
+        path_params['cellIndex'] = cell_index  # noqa: E501
+        path_params['paragraphIndex'] = paragraph_index  # noqa: E501
+        path_params['format'] = format  # noqa: E501
+
+        query_params = []
+        if scale_x:
+            query_params.append(('scaleX', scale_x))  # noqa: E501
+        if scale_y:
+            query_params.append(('scaleY', scale_y))  # noqa: E501
+        if quality:
+            query_params.append(('quality', quality))  # noqa: E501
+        if folder:
+            query_params.append(('folder', folder))  # noqa: E501
+        if storage:
+            query_params.append(('storage', storage))  # noqa: E501
+        if fonts_folder:
+            query_params.append(('fontsFolder', fonts_folder))  # noqa: E501
+
+        header_params = {}
+        if password:
+            header_params['password'] = password  # noqa: E501
+
+        form_params = []
+        param_files = []
+
+        body_params = None
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/rows/{rowIndex}/cells/{cellIndex}/paragraphs/{paragraphIndex}/{format}', 'POST',
             path_params,
             query_params,
             header_params,
@@ -14882,7 +15192,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -14968,7 +15278,7 @@ class SlidesApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -15062,7 +15372,7 @@ class SlidesApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -15172,7 +15482,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -15292,7 +15602,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -15402,7 +15712,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -15506,7 +15816,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -15596,7 +15906,7 @@ class SlidesApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -15700,7 +16010,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -15810,7 +16120,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -15906,7 +16216,7 @@ class SlidesApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -16002,7 +16312,7 @@ class SlidesApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -16112,7 +16422,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -16216,7 +16526,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -16311,9 +16621,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -16423,7 +16733,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -16509,7 +16819,7 @@ class SlidesApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -16619,7 +16929,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -16723,7 +17033,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -16833,7 +17143,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -16937,7 +17247,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -17047,7 +17357,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -17157,7 +17467,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -17258,9 +17568,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -17386,7 +17696,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -17512,7 +17822,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -17634,7 +17944,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -17754,7 +18064,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -17870,7 +18180,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -17980,7 +18290,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -18112,7 +18422,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -18244,7 +18554,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -18372,7 +18682,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -18498,7 +18808,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -18602,7 +18912,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -18706,7 +19016,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -18814,7 +19124,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -18918,7 +19228,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -19022,7 +19332,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -19142,7 +19452,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -19258,7 +19568,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -19379,7 +19689,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -19489,7 +19799,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -19599,7 +19909,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -19709,7 +20019,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -19827,7 +20137,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -19931,7 +20241,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -20035,7 +20345,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -20149,7 +20459,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -20253,7 +20563,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -20380,7 +20690,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -20515,7 +20825,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -20644,7 +20954,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -20785,7 +21095,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -20920,7 +21230,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -21049,7 +21359,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -21172,7 +21482,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -21306,7 +21616,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -21434,7 +21744,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -21574,7 +21884,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -21708,7 +22018,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -21818,7 +22128,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -21928,7 +22238,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -22032,7 +22342,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -22136,7 +22446,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -22258,7 +22568,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -22384,7 +22694,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -22518,7 +22828,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -22656,7 +22966,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -22803,9 +23113,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -22919,7 +23229,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if html:
@@ -23032,9 +23342,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if pdf:
-            param_files['pdf'] = pdf  # noqa: E501
+            param_files.append(pdf)  # noqa: E501
 
         body_params = None
         if options:
@@ -23173,9 +23483,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if image:
-            param_files['image'] = image  # noqa: E501
+            param_files.append(image)  # noqa: E501
 
         body_params = None
 
@@ -23317,9 +23627,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -23428,7 +23738,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if request:
@@ -23531,8 +23841,9 @@ class SlidesApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
-        param_files = files
+        param_files = []
+        if files:
+            param_files.extend(files)
 
         body_params = None
         if request:
@@ -23628,8 +23939,9 @@ class SlidesApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
-        param_files = files
+        param_files = []
+        if files:
+            param_files.extend(files)
 
         body_params = None
         if request:
@@ -23752,7 +24064,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if table_cell_merge_options:
@@ -23865,7 +24177,7 @@ class SlidesApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -23972,7 +24284,7 @@ class SlidesApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -24089,7 +24401,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -24206,7 +24518,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -24316,7 +24628,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -24417,9 +24729,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -24519,7 +24831,7 @@ class SlidesApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -24628,7 +24940,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if request:
@@ -24723,8 +25035,9 @@ class SlidesApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
-        param_files = files
+        param_files = []
+        if files:
+            param_files.extend(files)
 
         body_params = None
         if pipeline:
@@ -24840,7 +25153,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -24964,7 +25277,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -25079,9 +25392,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -25196,9 +25509,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if image:
-            param_files['image'] = image  # noqa: E501
+            param_files.append(image)  # noqa: E501
 
         body_params = None
 
@@ -25304,11 +25617,11 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
         if image:
-            param_files['image'] = image  # noqa: E501
+            param_files.append(image)  # noqa: E501
 
         body_params = None
 
@@ -25430,7 +25743,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -25543,9 +25856,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -25671,7 +25984,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -25788,9 +26101,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -25918,7 +26231,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -26037,9 +26350,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -26163,7 +26476,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if portion_format:
@@ -26280,9 +26593,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
         if portion_format:
@@ -26428,7 +26741,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -26441,6 +26754,164 @@ class SlidesApi(ApiBase):
 
         return self.api_client.call_api(
             '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}/{format}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=param_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', False),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def save_paragraph(self, name, slide_index, shape_index, paragraph_index, format, out_path, scale_x = None, scale_y = None, quality = None, password = None, folder = None, storage = None, fonts_folder = None, sub_shape = None, **kwargs):  # noqa: E501
+        """Render paragraph to specified picture format and save it to the storage.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.(name, slide_index, shape_index, paragraph_index, format, out_path, scale_x, scale_y, quality, password, folder, storage, fonts_folder, sub_shape, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Presentation name.
+        :param slide_index Slide index.
+        :param shape_index Index of shape starting from 1
+        :param paragraph_index Paragraph index.
+        :param format Export picture format.
+        :param out_path Output path.
+        :param scale_x X scale ratio.
+        :param scale_y Y scale ratio.
+        :param quality Image quality (1 to 100); applies to JPEG only.
+        :param password Document password.
+        :param folder Presentation folder.
+        :param storage Presentation storage.
+        :param fonts_folder Fonts folder.
+        :param sub_shape Sub-shape path (e.g. \"3\", \"3/shapes/2).
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.save_paragraph_with_http_info(name, slide_index, shape_index, paragraph_index, format, out_path, scale_x, scale_y, quality, password, folder, storage, fonts_folder, sub_shape, **kwargs)  # noqa: E501
+        else:
+            (data) = self.save_paragraph_with_http_info(name, slide_index, shape_index, paragraph_index, format, out_path, scale_x, scale_y, quality, password, folder, storage, fonts_folder, sub_shape, **kwargs)  # noqa: E501
+            return data
+
+    def save_paragraph_with_http_info(self, name, slide_index, shape_index, paragraph_index, format, out_path, scale_x = None, scale_y = None, quality = None, password = None, folder = None, storage = None, fonts_folder = None, sub_shape = None, **kwargs):  # noqa: E501
+        """Render paragraph to specified picture format and save it to the storage.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.save_paragraph_with_http_info(name, slide_index, shape_index, paragraph_index, format, out_path, scale_x, scale_y, quality, password, folder, storage, fonts_folder, sub_shape, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Presentation name.
+        :param slide_index Slide index.
+        :param shape_index Index of shape starting from 1
+        :param paragraph_index Paragraph index.
+        :param format Export picture format.
+        :param out_path Output path.
+        :param scale_x X scale ratio.
+        :param scale_y Y scale ratio.
+        :param quality Image quality (1 to 100); applies to JPEG only.
+        :param password Document password.
+        :param folder Presentation folder.
+        :param storage Presentation storage.
+        :param fonts_folder Fonts folder.
+        :param sub_shape Sub-shape path (e.g. \"3\", \"3/shapes/2).
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method save_paragraph" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not name:
+            raise ValueError("Missing the required parameter `name` when calling `save_paragraph`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not slide_index:
+            raise ValueError("Missing the required parameter `slide_index` when calling `save_paragraph`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not shape_index:
+            raise ValueError("Missing the required parameter `shape_index` when calling `save_paragraph`")  # noqa: E501
+        # verify the required parameter 'paragraph_index' is set
+        if not paragraph_index:
+            raise ValueError("Missing the required parameter `paragraph_index` when calling `save_paragraph`")  # noqa: E501
+        # verify the required parameter 'format' is set
+        if not format:
+            raise ValueError("Missing the required parameter `format` when calling `save_paragraph`")  # noqa: E501
+        # verify the value of parameter 'format' is valid
+        if not format.upper() in ImageExportFormat.__dict__:
+            raise ValueError("Invalid value for parameter `format` when calling `save_paragraph`")  # noqa: E501
+        # verify the required parameter 'out_path' is set
+        if not out_path:
+            raise ValueError("Missing the required parameter `out_path` when calling `save_paragraph`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = name  # noqa: E501
+        path_params['slideIndex'] = slide_index  # noqa: E501
+        path_params['shapeIndex'] = shape_index  # noqa: E501
+        path_params['paragraphIndex'] = paragraph_index  # noqa: E501
+        path_params['format'] = format  # noqa: E501
+
+        query_params = []
+        if out_path:
+            query_params.append(('outPath', out_path))  # noqa: E501
+        if scale_x:
+            query_params.append(('scaleX', scale_x))  # noqa: E501
+        if scale_y:
+            query_params.append(('scaleY', scale_y))  # noqa: E501
+        if quality:
+            query_params.append(('quality', quality))  # noqa: E501
+        if folder:
+            query_params.append(('folder', folder))  # noqa: E501
+        if storage:
+            query_params.append(('storage', storage))  # noqa: E501
+        if fonts_folder:
+            query_params.append(('fontsFolder', fonts_folder))  # noqa: E501
+        if sub_shape:
+            query_params.append(('subShape', sub_shape))  # noqa: E501
+
+        header_params = {}
+        if password:
+            header_params['password'] = password  # noqa: E501
+
+        form_params = []
+        param_files = []
+
+        body_params = None
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/{format}', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -26559,7 +27030,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if options:
@@ -26718,7 +27189,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if options:
@@ -26868,9 +27339,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
         if options:
@@ -27012,7 +27483,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if options:
@@ -27149,9 +27620,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
         if options:
@@ -27319,7 +27790,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if options:
@@ -27334,6 +27805,172 @@ class SlidesApi(ApiBase):
 
         return self.api_client.call_api(
             '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{shapeIndex}/{format}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=param_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', False),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def save_table_cell_paragraph(self, name, slide_index, shape_index, row_index, cell_index, paragraph_index, format, out_path, scale_x = None, scale_y = None, quality = None, password = None, folder = None, storage = None, fonts_folder = None, **kwargs):  # noqa: E501
+        """Render table cell paragraph to specified picture format and save it to the storage.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.(name, slide_index, shape_index, row_index, cell_index, paragraph_index, format, out_path, scale_x, scale_y, quality, password, folder, storage, fonts_folder, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Document name.
+        :param slide_index Slide index.
+        :param shape_index Shape index.
+        :param row_index Row index.
+        :param cell_index Table cell index.
+        :param paragraph_index Paragraph index.
+        :param format Export picture format.
+        :param out_path Output path.
+        :param scale_x X scale ratio.
+        :param scale_y Y scale ratio.
+        :param quality Image quality (1 to 100); applies to JPEG only.
+        :param password Document password.
+        :param folder Document folder.
+        :param storage Document storage.
+        :param fonts_folder Fonts folder.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('is_async'):
+            return self.save_table_cell_paragraph_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, format, out_path, scale_x, scale_y, quality, password, folder, storage, fonts_folder, **kwargs)  # noqa: E501
+        else:
+            (data) = self.save_table_cell_paragraph_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, format, out_path, scale_x, scale_y, quality, password, folder, storage, fonts_folder, **kwargs)  # noqa: E501
+            return data
+
+    def save_table_cell_paragraph_with_http_info(self, name, slide_index, shape_index, row_index, cell_index, paragraph_index, format, out_path, scale_x = None, scale_y = None, quality = None, password = None, folder = None, storage = None, fonts_folder = None, **kwargs):  # noqa: E501
+        """Render table cell paragraph to specified picture format and save it to the storage.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+        >>> thread = api.save_table_cell_paragraph_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, format, out_path, scale_x, scale_y, quality, password, folder, storage, fonts_folder, is_async=True)
+        >>> result = thread.get()
+
+        :param is_async bool
+        :param name Document name.
+        :param slide_index Slide index.
+        :param shape_index Shape index.
+        :param row_index Row index.
+        :param cell_index Table cell index.
+        :param paragraph_index Paragraph index.
+        :param format Export picture format.
+        :param out_path Output path.
+        :param scale_x X scale ratio.
+        :param scale_y Y scale ratio.
+        :param quality Image quality (1 to 100); applies to JPEG only.
+        :param password Document password.
+        :param folder Document folder.
+        :param storage Document storage.
+        :param fonts_folder Fonts folder.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('is_async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method save_table_cell_paragraph" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if not name:
+            raise ValueError("Missing the required parameter `name` when calling `save_table_cell_paragraph`")  # noqa: E501
+        # verify the required parameter 'slide_index' is set
+        if not slide_index:
+            raise ValueError("Missing the required parameter `slide_index` when calling `save_table_cell_paragraph`")  # noqa: E501
+        # verify the required parameter 'shape_index' is set
+        if not shape_index:
+            raise ValueError("Missing the required parameter `shape_index` when calling `save_table_cell_paragraph`")  # noqa: E501
+        # verify the required parameter 'row_index' is set
+        if not row_index:
+            raise ValueError("Missing the required parameter `row_index` when calling `save_table_cell_paragraph`")  # noqa: E501
+        # verify the required parameter 'cell_index' is set
+        if not cell_index:
+            raise ValueError("Missing the required parameter `cell_index` when calling `save_table_cell_paragraph`")  # noqa: E501
+        # verify the required parameter 'paragraph_index' is set
+        if not paragraph_index:
+            raise ValueError("Missing the required parameter `paragraph_index` when calling `save_table_cell_paragraph`")  # noqa: E501
+        # verify the required parameter 'format' is set
+        if not format:
+            raise ValueError("Missing the required parameter `format` when calling `save_table_cell_paragraph`")  # noqa: E501
+        # verify the value of parameter 'format' is valid
+        if not format.upper() in ImageExportFormat.__dict__:
+            raise ValueError("Invalid value for parameter `format` when calling `save_table_cell_paragraph`")  # noqa: E501
+        # verify the required parameter 'out_path' is set
+        if not out_path:
+            raise ValueError("Missing the required parameter `out_path` when calling `save_table_cell_paragraph`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        path_params['name'] = name  # noqa: E501
+        path_params['slideIndex'] = slide_index  # noqa: E501
+        path_params['shapeIndex'] = shape_index  # noqa: E501
+        path_params['rowIndex'] = row_index  # noqa: E501
+        path_params['cellIndex'] = cell_index  # noqa: E501
+        path_params['paragraphIndex'] = paragraph_index  # noqa: E501
+        path_params['format'] = format  # noqa: E501
+
+        query_params = []
+        if out_path:
+            query_params.append(('outPath', out_path))  # noqa: E501
+        if scale_x:
+            query_params.append(('scaleX', scale_x))  # noqa: E501
+        if scale_y:
+            query_params.append(('scaleY', scale_y))  # noqa: E501
+        if quality:
+            query_params.append(('quality', quality))  # noqa: E501
+        if folder:
+            query_params.append(('folder', folder))  # noqa: E501
+        if storage:
+            query_params.append(('storage', storage))  # noqa: E501
+        if fonts_folder:
+            query_params.append(('fontsFolder', fonts_folder))  # noqa: E501
+
+        header_params = {}
+        if password:
+            header_params['password'] = password  # noqa: E501
+
+        form_params = []
+        param_files = []
+
+        body_params = None
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/rows/{rowIndex}/cells/{cellIndex}/paragraphs/{paragraphIndex}/{format}', 'PUT',
             path_params,
             query_params,
             header_params,
@@ -27436,7 +28073,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if animation:
@@ -27553,7 +28190,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if background:
@@ -27672,7 +28309,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -27802,7 +28439,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if axis:
@@ -27925,7 +28562,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if legend:
@@ -28054,7 +28691,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if series_group:
@@ -28186,7 +28823,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if chart_wall:
@@ -28297,7 +28934,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if properties:
@@ -28414,7 +29051,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if _property:
@@ -28534,7 +29171,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -28643,9 +29280,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
 
@@ -28760,8 +29397,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
-        param_files = fonts
+        param_files = []
+        if fonts:
+            param_files.extend(fonts)
 
         body_params = None
 
@@ -28867,10 +29505,11 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
-        param_files = fonts
+            param_files.append(document)  # noqa: E501
+        if fonts:
+            param_files.extend(fonts)
 
         body_params = None
 
@@ -28985,7 +29624,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -29096,7 +29735,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -29207,7 +29846,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -29309,9 +29948,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
         if dto:
@@ -29422,7 +30061,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if sections:
@@ -29545,7 +30184,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -29662,7 +30301,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -29773,7 +30412,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -29884,7 +30523,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -30010,7 +30649,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if animation:
@@ -30121,7 +30760,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -30260,7 +30899,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if options:
@@ -30396,9 +31035,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
         if options:
@@ -30530,9 +31169,9 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
         if options:
@@ -30677,7 +31316,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -30769,7 +31408,7 @@ class SlidesApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -30890,7 +31529,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if effect:
@@ -31019,7 +31658,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if effect:
@@ -31148,7 +31787,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if category:
@@ -31283,7 +31922,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if data_point:
@@ -31412,7 +32051,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if series:
@@ -31529,7 +32168,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if slide_dto:
@@ -31646,7 +32285,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -31779,7 +32418,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -31918,7 +32557,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -32037,7 +32676,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -32162,7 +32801,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -32279,7 +32918,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if slide_dto:
@@ -32411,7 +33050,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if effect:
@@ -32549,7 +33188,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if effect:
@@ -32691,7 +33330,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -32839,7 +33478,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -32975,7 +33614,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -33110,7 +33749,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -33251,7 +33890,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -33398,7 +34037,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -33527,7 +34166,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if dto:
@@ -33644,7 +34283,7 @@ class SlidesApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if module_dto:
@@ -33747,9 +34386,9 @@ class SlidesApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
         if file:
-            param_files['file'] = file  # noqa: E501
+            param_files.append(file)  # noqa: E501
 
         body_params = None
 

@@ -1,5 +1,6 @@
 from __future__ import absolute_import
 
+import os
 from test.base_test import BaseTest
 from asposeslidescloud import TableCell, TableRow, Table, TableCellMergeOptions, Portion, Paragraph
 
@@ -204,6 +205,44 @@ class TestTable(BaseTest):
             self.password,
             self.folder_name)
         self.assertEqual(0, len(response.paragraph_links))
+
+    def test_download_table_cell_paragraph(self):
+        BaseTest.slides_api.copy_file(self.temp_path, self.path)
+        row_index = 1
+        response = BaseTest.slides_api.download_table_cell_paragraph(
+            self.file_name,
+            self.slide_index,
+            self.shape_index,
+            row_index,
+            self.cell_index,
+            self.paragraph_index,
+            'png',
+            None,
+            None,
+            None,
+            self.password,
+            self.folder_name)
+        self.assertGreater(os.path.getsize(response), 0)
+
+    def test_save_table_cell_paragraph(self):
+        out_path = self.folder_name + "/tableCellParagraph.png"
+        BaseTest.slides_api.copy_file(self.temp_path, self.path)
+        row_index = 1
+        BaseTest.slides_api.save_table_cell_paragraph(
+            self.file_name,
+            self.slide_index,
+            self.shape_index,
+            row_index,
+            self.cell_index,
+            self.paragraph_index,
+            'png',
+            out_path,
+            None,
+            None,
+            None,
+            self.password,
+            self.folder_name)
+        self.assertTrue(BaseTest.slides_api.object_exists(out_path).exists)
 
     def test_get_table_cell_portions(self):
         BaseTest.slides_api.copy_file(self.temp_path, self.path)

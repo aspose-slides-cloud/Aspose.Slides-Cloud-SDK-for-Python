@@ -55,7 +55,8 @@ class Html5ExportOptions(ExportOptions):
         'embed_images': 'bool',
         'slides_layout_options': 'SlidesLayoutOptions',
         'templates_path': 'str',
-        'disable_font_ligatures': 'bool'
+        'disable_font_ligatures': 'bool',
+        'pictures_compression': 'str'
     }
 
     attribute_map = {
@@ -71,14 +72,15 @@ class Html5ExportOptions(ExportOptions):
         'embed_images': 'embedImages',
         'slides_layout_options': 'slidesLayoutOptions',
         'templates_path': 'templatesPath',
-        'disable_font_ligatures': 'disableFontLigatures'
+        'disable_font_ligatures': 'disableFontLigatures',
+        'pictures_compression': 'picturesCompression'
     }
 
     type_determiners = {
         'format': 'html5',
     }
 
-    def __init__(self, default_regular_font=None, delete_embedded_binary_objects=None, gradient_style=None, font_fallback_rules=None, font_subst_rules=None, skip_java_script_links=None, format='html5', animate_transitions=None, animate_shapes=None, embed_images=None, slides_layout_options=None, templates_path=None, disable_font_ligatures=None):  # noqa: E501
+    def __init__(self, default_regular_font=None, delete_embedded_binary_objects=None, gradient_style=None, font_fallback_rules=None, font_subst_rules=None, skip_java_script_links=None, format='html5', animate_transitions=None, animate_shapes=None, embed_images=None, slides_layout_options=None, templates_path=None, disable_font_ligatures=None, pictures_compression=None):  # noqa: E501
         """Html5ExportOptions - a model defined in Swagger"""  # noqa: E501
         super(Html5ExportOptions, self).__init__(default_regular_font, delete_embedded_binary_objects, gradient_style, font_fallback_rules, font_subst_rules, skip_java_script_links, format)
 
@@ -88,6 +90,7 @@ class Html5ExportOptions(ExportOptions):
         self._slides_layout_options = None
         self._templates_path = None
         self._disable_font_ligatures = None
+        self._pictures_compression = None
         self.format = 'html5'
 
         if animate_transitions is not None:
@@ -102,6 +105,8 @@ class Html5ExportOptions(ExportOptions):
             self.templates_path = templates_path
         if disable_font_ligatures is not None:
             self.disable_font_ligatures = disable_font_ligatures
+        if pictures_compression is not None:
+            self.pictures_compression = pictures_compression
 
     @property
     def animate_transitions(self):
@@ -234,6 +239,44 @@ class Html5ExportOptions(ExportOptions):
         :type: bool
         """
         self._disable_font_ligatures = disable_font_ligatures
+
+    @property
+    def pictures_compression(self):
+        """Gets the pictures_compression of this Html5ExportOptions.  # noqa: E501
+
+        Represents the pictures compression level. Pictures are not compressed (DocumentResolution) by default. Not applied when TemplatesPath is set.  # noqa: E501
+
+        :return: The pictures_compression of this Html5ExportOptions.  # noqa: E501
+        :rtype: str
+        """
+        return self._pictures_compression
+
+    @pictures_compression.setter
+    def pictures_compression(self, pictures_compression):
+        """Sets the pictures_compression of this Html5ExportOptions.
+
+        Represents the pictures compression level. Pictures are not compressed (DocumentResolution) by default. Not applied when TemplatesPath is set.  # noqa: E501
+
+        :param pictures_compression: The pictures_compression of this Html5ExportOptions.  # noqa: E501
+        :type: str
+        """
+        if pictures_compression is not None:
+            allowed_values = ["Dpi330", "Dpi220", "Dpi150", "Dpi96", "Dpi72", "DocumentResolution"]  # noqa: E501
+            if pictures_compression.isdigit():
+                int_pictures_compression = int(pictures_compression)
+                if int_pictures_compression < 0 or int_pictures_compression >= len(allowed_values):
+                    raise ValueError(
+                        "Invalid value for `pictures_compression` ({0}), must be one of {1}"  # noqa: E501
+                        .format(pictures_compression, allowed_values)
+                    )
+                self._pictures_compression = allowed_values[int_pictures_compression]
+                return
+            if pictures_compression not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `pictures_compression` ({0}), must be one of {1}"  # noqa: E501
+                    .format(pictures_compression, allowed_values)
+                )
+        self._pictures_compression = pictures_compression
 
     def to_dict(self):
         """Returns the model properties as a dict"""

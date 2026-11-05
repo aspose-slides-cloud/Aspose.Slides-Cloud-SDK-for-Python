@@ -1,5 +1,7 @@
 from __future__ import absolute_import
 
+import os
+
 from asposeslidescloud import Paragraph, Portion, PortionFormat
 from test.base_test import BaseTest
 
@@ -204,3 +206,66 @@ class TestParagraph(BaseTest):
             None,
             self.sub_shape)
         self.assertEqual(72, response.default_tab_size)
+
+    def test_download_paragraph(self):
+        BaseTest.slides_api.copy_file(self.temp_path, self.path)
+        response = BaseTest.slides_api.download_paragraph(
+            self.file_name, self.slide_index, self.shape_index, self.paragraph_index, 'png', None, None, None,
+            self.password, self.folder_name)
+        self.assertGreater(os.path.getsize(response), 0)
+
+    def test_download_sub_shape_paragraph(self):
+        BaseTest.slides_api.copy_file(self.temp_path, self.path)
+        response = BaseTest.slides_api.download_paragraph(
+            self.file_name,
+            self.slide_index,
+            self.group_shape_index,
+            self.paragraph_index,
+            'png',
+            None,
+            None,
+            None,
+            self.password,
+            self.folder_name,
+            None,
+            None,
+            self.sub_shape)
+        self.assertGreater(os.path.getsize(response), 0)
+
+    def test_download_paragraph_scaled(self):
+        BaseTest.slides_api.copy_file(self.temp_path, self.path)
+        response = BaseTest.slides_api.download_paragraph(
+            self.file_name, self.slide_index, self.shape_index, self.paragraph_index, 'png', None, None, None,
+            self.password, self.folder_name)
+        scaled_response = BaseTest.slides_api.download_paragraph(
+            self.file_name, self.slide_index, self.shape_index, self.paragraph_index, 'png', 2, 2, None,
+            self.password, self.folder_name)
+        self.assertGreater(os.path.getsize(scaled_response), os.path.getsize(response))
+
+    def test_save_paragraph(self):
+        out_path = self.folder_name + "/paragraph.png"
+        BaseTest.slides_api.copy_file(self.temp_path, self.path)
+        BaseTest.slides_api.save_paragraph(
+            self.file_name, self.slide_index, self.shape_index, self.paragraph_index, 'png', out_path, None, None,
+            None, self.password, self.folder_name)
+        self.assertTrue(BaseTest.slides_api.object_exists(out_path).exists)
+
+    def test_save_sub_shape_paragraph(self):
+        out_path = self.folder_name + "/paragraph.png"
+        BaseTest.slides_api.copy_file(self.temp_path, self.path)
+        BaseTest.slides_api.save_paragraph(
+            self.file_name,
+            self.slide_index,
+            self.group_shape_index,
+            self.paragraph_index,
+            'png',
+            out_path,
+            None,
+            None,
+            None,
+            self.password,
+            self.folder_name,
+            None,
+            None,
+            self.sub_shape)
+        self.assertTrue(BaseTest.slides_api.object_exists(out_path).exists)

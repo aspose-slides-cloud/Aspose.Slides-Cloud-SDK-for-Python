@@ -114,7 +114,7 @@ class SlidesAsyncApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -206,7 +206,7 @@ class SlidesAsyncApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -298,7 +298,7 @@ class SlidesAsyncApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
 
@@ -417,9 +417,9 @@ class SlidesAsyncApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
         if options:
@@ -547,9 +547,9 @@ class SlidesAsyncApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
         if options:
@@ -675,7 +675,7 @@ class SlidesAsyncApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if options:
@@ -771,8 +771,9 @@ class SlidesAsyncApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
-        param_files = files
+        param_files = []
+        if files:
+            param_files.extend(files)
 
         body_params = None
         if request:
@@ -875,8 +876,9 @@ class SlidesAsyncApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
-        param_files = files
+        param_files = []
+        if files:
+            param_files.extend(files)
 
         body_params = None
         if request:
@@ -1009,7 +1011,7 @@ class SlidesAsyncApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if options:
@@ -1150,7 +1152,7 @@ class SlidesAsyncApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
 
         body_params = None
         if options:
@@ -1286,9 +1288,9 @@ class SlidesAsyncApi(ApiBase):
             header_params['password'] = password  # noqa: E501
 
         form_params = []
-        param_files = {}
+        param_files = []
         if document:
-            param_files['document'] = document  # noqa: E501
+            param_files.append(document)  # noqa: E501
 
         body_params = None
         if options:
@@ -1391,9 +1393,9 @@ class SlidesAsyncApi(ApiBase):
         header_params = {}
 
         form_params = []
-        param_files = {}
+        param_files = []
         if file:
-            param_files['file'] = file  # noqa: E501
+            param_files.append(file)  # noqa: E501
 
         body_params = None
 

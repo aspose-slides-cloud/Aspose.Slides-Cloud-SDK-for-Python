@@ -595,5 +595,5 @@ class TestShape(BaseTest):
 
     def test_shape_clone_from_slide(self):
         BaseTest.slides_api.copy_file(self.temp_path, self.path)
-        shape = BaseTest.slides_api.create_shape(self.file_name, 3, None, 1, 1, None, None, self.password, self.folder_name)
+        shape = BaseTest.slides_api.create_shape(self.file_name, 3, None, 1, 1, None, self.password, self.folder_name)
         self.assertIsNotNone(shape)
